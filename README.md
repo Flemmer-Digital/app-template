@@ -1,5 +1,13 @@
 # app-template
 
+## To Do
+### Authentication:
+- NativeOauthConfig.ts
+- Testing
+- Api Integration
+
+### Error Logger (sentry?)
+
 ## Packages
 
 ### Authentication
