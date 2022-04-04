@@ -1,8 +1,9 @@
 import {refresh} from 'react-native-app-auth';
 import { differenceInSeconds } from 'date-fns'
 import { storeOauthToken } from './tokenStore'
+import { signOut } from './signOut'
 
-class NativeOauthToken {
+export class NativeOauthToken {
   public accessToken: string;
   public refreshToken: string | null;
 
@@ -29,7 +30,7 @@ class NativeOauthToken {
     await storeOauthToken(this)
     } catch(e) {
       // save error somwhere
-      softSignout()
+      signOut()
     }
   }
 }
