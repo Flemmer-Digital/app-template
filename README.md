@@ -3,6 +3,9 @@
 ## To Do
 ### Authentication:
 - NativeOauthConfig.ts
+- UseAuthentication
+- Navigation
+- Add graphql
 - Testing
 - Api Integration
 
