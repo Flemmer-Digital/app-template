@@ -1,8 +1,8 @@
 import React from 'react';
-import {View} from 'react-native';
+import {View, Text} from 'react-native';
 
 const SignInView = ({authenticator}) => {
-  return <View />;
+  return <Text>Sign In</Text>;
 };
 
 export default SignInView;
