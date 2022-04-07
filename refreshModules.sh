@@ -5,6 +5,7 @@ rm -rf ./node_modules
 rm yarn.lock
 
 cd ios
+rm Podfile.lock
 rm -rf ./Pods
 
 cd ..

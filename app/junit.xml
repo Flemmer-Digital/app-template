@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuites name="jest tests" tests="1" failures="1" errors="0" time="7.033">
-  <testsuite name="authenticate tests" errors="0" failures="1" skipped="0" timestamp="2022-04-06T18:08:34" time="5.259" tests="1">
-    <testcase classname="authenticate tests tests authenticate methods" name="authenticate tests tests authenticate methods" time="0.023">
+<testsuites name="jest tests" tests="1" failures="1" errors="0" time="7.218">
+  <testsuite name="authenticate tests" errors="0" failures="1" skipped="0" timestamp="2022-04-07T07:18:38" time="3.245" tests="1">
+    <testcase classname="authenticate tests tests authenticate methods" name="authenticate tests tests authenticate methods" time="0.016">
       <failure>TypeError: Cannot read property &apos;authorize&apos; of undefined
     at authorize (/Users/mac/Documents/flemmer-digital-tech/templates/app-template/app/node_modules/react-native-app-auth/index.js:246:20)
     at authenticate (/Users/mac/Documents/flemmer-digital-tech/templates/app-template/app/src/modules/authentication/authenticate.ts:6:36)
