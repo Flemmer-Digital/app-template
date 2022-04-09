@@ -6,7 +6,9 @@ capitalName = name.capitalize()
 fileContents = f"""import React from 'react';
 import styles from './{name}Styles';
 
-const {capitalName}: React.FC = () => {{
+interface {capitalName}Props {{}}
+
+const {capitalName}: React.FC<{capitalName}Props> = () => {{
   return <></>;
 }};
 
