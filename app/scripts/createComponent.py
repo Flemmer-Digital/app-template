@@ -11,5 +11,12 @@ const {capitalName}: React.FC = () => {{
 
 export default {capitalName};"""
 
+styleContents = f"""import {{ StyleSheet }} from 'react-native';
+import {{ vh, vw }} from '../../styles/viewports';
+
+const {name}Styles = StyleSheet.create({{}});
+
+export default {name}Styles;
+"""
+
 print(f"Creating Component: {name}")
-print(fileContents)
