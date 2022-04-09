@@ -28,13 +28,16 @@ export default {name}Styles;
 newComponentFolder = os.path.join(os.getcwd(), f"src/components/{name}")
 try:
   os.mkdir(newComponentFolder)
+  # print(f"Creating Component: {name}")
+  with open(f"./src/components/{name}/{name}.tsx", "w") as f:
+      f.write(fileContents)
+      
+  with open(f"./src/components/{name}/{name}Styles.ts", "w") as f:
+      f.write(styleContents)
+      
+  print(f"\n*** Created Component {name} ***\n")
 except FileExistsError:
   print(f"\n*** Component {name} already exists ***\n")
 
-# print(f"Creating Component: {name}")
-with open(f"./src/components/{name}/{name}.tsx", "w") as f:
-    f.write(fileContents)
-    
-with open(f"./src/components/{name}/{name}Styles.ts", "w") as f:
-    f.write(styleContents)
+
     
