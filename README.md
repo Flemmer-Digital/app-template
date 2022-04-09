@@ -40,6 +40,15 @@ yarn createComp `componentName` - Creates files for component, styles and test i
 3. `sh initialSetup.sh` (might take a couple of attempts) 
 4. `yarn start`
 
+### Authentication
+
+### Sentry
+Create a new project in sentry.
+Set up in index.js (docs)[https://docs.sentry.io/platforms/react-native/]
+run
+`npx @sentry/wizard -i reactNative -p ios android`
+then run:
+`yarn install:pods`
 
 ## Building The App
 ### Ios
