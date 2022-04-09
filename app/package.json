@@ -16,7 +16,8 @@
     "test:debug": "TZ=UTC node --inspect-brk node_modules/.bin/jest --runInBand",
     "test": "TZ=UTC jest",
     "typecheck": "yarn run tsc --noEmit",
-    "find-unused-exports": "ts-unused-exports tsconfig.json '--ignoreFiles=.*(e2e|stub|__generated__)' '--excludePathsFromReport=schema-types.d.ts'"
+    "find-unused-exports": "ts-unused-exports tsconfig.json '--ignoreFiles=.*(e2e|stub|__generated__)' '--excludePathsFromReport=schema-types.d.ts'",
+    "creatComp": "python3 ./scripts/createComponent.py"
   },
   "dependencies": {
     "lodash": "4.17.21",
