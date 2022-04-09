@@ -1,4 +1,5 @@
 import sys
+import os
 
 name = sys.argv[1]
 capitalName = name.capitalize()
@@ -11,12 +12,27 @@ const {capitalName}: React.FC = () => {{
 
 export default {capitalName};"""
 
-styleContents = f"""import {{ StyleSheet }} from 'react-native';
-import {{ vh, vw }} from '../../styles/viewports';
+styleContents = f"""import {{ StyleSheet, Dimensions }} from 'react-native';
+const {{ width, height }} = Dimensions.get("window");
+const vh = height / 100;
+const vw = width / 100;
 
 const {name}Styles = StyleSheet.create({{}});
 
 export default {name}Styles;
 """
 
-print(f"Creating Component: {name}")
+# Create component folder
+newComponentFolder = os.path.join(os.getcwd(), f"src/components/{name}")
+try:
+  os.mkdir(newComponentFolder)
+except FileExistsError:
+  print(f"\n*** Component {name} already exists ***\n")
+
+# print(f"Creating Component: {name}")
+with open(f"./src/components/{name}/{name}.tsx", "w") as f:
+    f.write(fileContents)
+    
+with open(f"./src/components/{name}/{name}Styles.ts", "w") as f:
+    f.write(styleContents)
+    
