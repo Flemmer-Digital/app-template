@@ -36,9 +36,19 @@ yarn createComp `componentName` - Creates files for component, styles and test i
 ## Getting Started
 
 1. Clone the repo
-2. `sh initialSetup.sh` (might take a couple of attempts) 
-3. `yarn start`
+2. `sh addPreCommits.sh`
+3. `sh initialSetup.sh` (might take a couple of attempts) 
+4. `yarn start`
 
+### Authentication
+
+### Sentry
+Create a new project in sentry.
+Set up in index.js (docs)[https://docs.sentry.io/platforms/react-native/]
+run
+`npx @sentry/wizard -i reactNative -p ios android`
+then run:
+`yarn install:pods`
 
 ## Building The App
 ### Ios
@@ -51,4 +61,6 @@ yarn createComp `componentName` - Creates files for component, styles and test i
 'Target Integrity': fix all (need to do this after every refresh of pods)
 RCT-Folly (semantic issues): comment out `typedef uint8_t clockid_t` (need to do this after every refresh of pods)
 <React/**.h> file not found: in Xcode => Product => manage schemes => Find React in list and move above app
+
+### Android
 

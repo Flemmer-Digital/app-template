@@ -3,7 +3,7 @@ import { differenceInSeconds } from 'date-fns'
 import { storeOauthToken } from './tokenStore'
 import { signOut } from './signOut'
 
-export class NativeOauthToken {
+export default class NativeOauthToken {
   public accessToken: string;
   public refreshToken: string | null;
 

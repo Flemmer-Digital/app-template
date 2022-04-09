@@ -13,19 +13,20 @@ const {capitalName}: React.FC<{capitalName}Props> = () => {{
   return <></>;
 }};
 
-export default {capitalName};"""
+export default {capitalName};
+"""
 
-styleContents = f"""import {{ StyleSheet, Dimensions }} from 'react-native';
-const {{ width, height }} = Dimensions.get("window");
-const vh = height / 100;
-const vw = width / 100;
+styleContents = f"""import {{StyleSheet, Dimensions}} from 'react-native';
+const {{width, height}} = Dimensions.get('window');
+export const vh = height / 100;
+export const vw = width / 100;
 
 const {name}Styles = StyleSheet.create({{}});
 
 export default {name}Styles;
 """
 
-testContents = f"""import {capitalName} from './{name}
+testContents = f"""import {capitalName} from './{name}'
 
 """
 

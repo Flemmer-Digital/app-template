@@ -2,8 +2,8 @@ import React from 'react';
 
 import SignInView from './SignInView';
 
-const SignInContainer = authenticator => {
-  return <SignInContainer authenticator={authenticator} />;
+const SignInContainer = ({navigation, authenticator}) => {
+  return <SignInView authenticator={authenticator} navigation={navigation} />;
 };
 
 export default SignInContainer;
