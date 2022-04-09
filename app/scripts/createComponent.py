@@ -35,9 +35,9 @@ try:
   with open(f"./src/components/{name}/{name}Styles.ts", "w") as f:
       f.write(styleContents)
       
-  print(f"\n*** Created Component {name} ***\n")
+  print(f"SUCCESS\nCreated Component '{name}'\n")
 except FileExistsError:
-  print(f"\n*** Component {name} already exists ***\n")
+  print(f"\n*** ERROR\n*** Component '{name}' already exists\n")
 
 
     
