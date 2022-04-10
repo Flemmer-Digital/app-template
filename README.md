@@ -25,6 +25,11 @@
 2. react-native-restart
 3. lodash
 
+### Testing
+1. (Jest)[https://jestjs.io/]
+2. (Jest Native)[https://testing-library.com/docs/ecosystem-jest-native/]
+3. (React Hooks)[https://react-hooks-testing-library.com/]
+
 ## Getting Started
 
 1. Clone the repo
