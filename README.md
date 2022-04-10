@@ -9,6 +9,9 @@
 - Testing
 - Api Integration
 
+### CI/CD
+- build before merging into master
+
 ### Error Logger (sentry?)
 
 ## Packages
@@ -34,8 +37,10 @@
 - ios: 12.0 (podfile and Xcode)
 - use .xcworkspace
 - Enable full disk access via System Preferences => Privacy
+- Force compile to swift by creating empty swift file in ios folder???
 
 #### Common Errors:
-RCT-Folly (semantic issues): comment out `typedef uint8_t clockid_t`
+'Target Integrity': fix all (need to do this after every refresh of pods)
+RCT-Folly (semantic issues): comment out `typedef uint8_t clockid_t` (need to do this after every refresh of pods)
 <React/**.h> file not found: in Xcode => Product => manage schemes => Find React in list and move above app
 

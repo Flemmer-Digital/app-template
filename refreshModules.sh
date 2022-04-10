@@ -5,6 +5,7 @@ rm -rf ./node_modules
 rm yarn.lock
 
 cd ios
+# pod deintegrate
 rm Podfile.lock
 rm -rf ./Pods
 
