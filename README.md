@@ -23,7 +23,7 @@
 ### Utility
 1. date-fns
 2. react-native-restart
-
+3. lodash
 
 ## Getting Started
 
