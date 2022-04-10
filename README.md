@@ -21,6 +21,8 @@
 1. date-fns
 2. react-native-restart
 
+### Commands
+yarn createComp `componentName` - Creates files for component, styles and test in the `src/components` directory
 
 ## Getting Started
 

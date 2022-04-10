@@ -1,6 +1,7 @@
 import sys
 import os
 
+
 name = sys.argv[1]
 capitalName = name.capitalize()
 fileContents = f"""import React from 'react';
@@ -24,6 +25,10 @@ const {name}Styles = StyleSheet.create({{}});
 export default {name}Styles;
 """
 
+testContents = f"""import {capitalName} from './{name}
+
+"""
+
 # Create component folder
 newComponentFolder = os.path.join(os.getcwd(), f"src/components/{name}")
 try:
@@ -34,6 +39,9 @@ try:
       
   with open(f"./src/components/{name}/{name}Styles.ts", "w") as f:
       f.write(styleContents)
+
+  with open(f"./src/components/{name}/{name}.test.tsx", "w") as f:
+      f.write(testContents)
       
   print(f"SUCCESS\nCreated Component '{name}'\n")
 except FileExistsError:
