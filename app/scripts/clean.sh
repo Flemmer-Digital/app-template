@@ -1,6 +1,6 @@
 #!/bin/bash
 
-cd app
+cd ..
 
 # rm -rf ./node_modules
 # cd app yarn
