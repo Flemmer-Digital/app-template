@@ -1,6 +1,6 @@
 #!/bin/bash
 
-cd ..
+cd app
 
 echo 'Installing dependencies...'
 yarn
