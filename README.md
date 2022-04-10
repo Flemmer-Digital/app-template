@@ -30,6 +30,9 @@
 2. (Jest Native)[https://testing-library.com/docs/ecosystem-jest-native/]
 3. (React Hooks)[https://react-hooks-testing-library.com/]
 
+### Commands
+yarn createComp `componentName` - Creates files for component, styles and test in the `src/components` directory
+
 ## Getting Started
 
 1. Clone the repo
