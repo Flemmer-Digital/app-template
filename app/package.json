@@ -13,7 +13,9 @@
   "dependencies": {
     "metro-babel-register": "^0.70.1",
     "react": "17.0.2",
-    "react-native": "0.68.0"
+    "react-native": "0.68.0",
+    "react-native-app-auth": "^6.4.1",
+    "react-native-keychain": "^8.0.0"
   },
   "devDependencies": {
     "@babel/core": "^7.12.9",
