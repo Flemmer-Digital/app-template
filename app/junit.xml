@@ -1,19 +1,19 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuites name="jest tests" tests="4" failures="0" errors="0" time="3.267">
-  <testsuite name="authenticate tests" errors="0" failures="0" skipped="0" timestamp="2022-04-10T12:53:15" time="2.312" tests="1">
+<testsuites name="jest tests" tests="4" failures="0" errors="0" time="5.275">
+  <testsuite name="undefined" errors="0" failures="0" skipped="0" timestamp="2022-04-10T16:05:45" time="4.101" tests="1">
+    <testcase classname=" passes" name=" passes" time="0.003">
+    </testcase>
+  </testsuite>
+  <testsuite name="undefined" errors="0" failures="0" skipped="0" timestamp="2022-04-10T16:05:45" time="4.102" tests="1">
+    <testcase classname=" passes" name=" passes" time="0.002">
+    </testcase>
+  </testsuite>
+  <testsuite name="undefined" errors="0" failures="0" skipped="0" timestamp="2022-04-10T16:05:45" time="4.104" tests="1">
+    <testcase classname=" passes" name=" passes" time="0.002">
+    </testcase>
+  </testsuite>
+  <testsuite name="authenticate tests" errors="0" failures="0" skipped="0" timestamp="2022-04-10T16:05:45" time="4.105" tests="1">
     <testcase classname="authenticate tests tests authenticate methods" name="authenticate tests tests authenticate methods" time="0.002">
-    </testcase>
-  </testsuite>
-  <testsuite name="undefined" errors="0" failures="0" skipped="0" timestamp="2022-04-10T12:53:15" time="2.384" tests="1">
-    <testcase classname=" passes" name=" passes" time="0.002">
-    </testcase>
-  </testsuite>
-  <testsuite name="undefined" errors="0" failures="0" skipped="0" timestamp="2022-04-10T12:53:15" time="2.39" tests="1">
-    <testcase classname=" passes" name=" passes" time="0.002">
-    </testcase>
-  </testsuite>
-  <testsuite name="undefined" errors="0" failures="0" skipped="0" timestamp="2022-04-10T12:53:15" time="2.376" tests="1">
-    <testcase classname=" passes" name=" passes" time="0.002">
     </testcase>
   </testsuite>
 </testsuites>

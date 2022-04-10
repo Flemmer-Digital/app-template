@@ -1,9 +1,10 @@
 import {NavigationContainer} from '@react-navigation/native';
-import {createNativeStackNavigator} from '@react-navigation/native-stack';
+import {createStackNavigator} from '@react-navigation/stack';
+import React from 'react';
 
 import SignIn from '../../screens/Authentication/SignIn';
 
-const Stack = createNativeStackNavigator();
+const Stack = createStackNavigator();
 
 const UnauthenticatedNavigation = () => {
   return (

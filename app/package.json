@@ -13,9 +13,16 @@
   "dependencies": {
     "metro-babel-register": "^0.70.1",
     "react": "17.0.2",
+    "@react-navigation/bottom-tabs": "^6.2.0",
+    "@react-navigation/drawer": "^6.3.3",
+    "@react-navigation/elements": "^1.2.1",
+    "@react-navigation/native": "^6.0.8",
+    "@react-navigation/stack": "^6.1.1",
+    "react-native-gesture-handler": "^2.2.0",
     "react-native": "0.68.0",
     "react-native-app-auth": "^6.4.1",
-    "react-native-keychain": "^8.0.0"
+    "react-native-keychain": "^8.0.0",
+    "react-native-safe-area-context": "^4.2.2"
   },
   "devDependencies": {
     "@babel/core": "^7.12.9",
