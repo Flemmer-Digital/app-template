@@ -2,7 +2,7 @@
   "name": "app",
   "version": "0.0.1",
   "private": true,
- "scripts": {
+  "scripts": {
     "all-checks": "yarn lint && yarn stylelint && yarn typecheck && yarn test",
     "install:pods": "cd ios && bundle exec pod install",
     "install:pods:harder": "cd ios && bundle install && bundle exec pod install --repo-update",
@@ -24,7 +24,7 @@
     "node-forge": "^0.10.0",
     "patch-package": "^6.4.7",
     "query-string": "7.0.1",
-    "react": "^17.0.2",
+    "react": "17.0.2",
     "react-dom": "^17.0.2",
     "react-native": "0.66.4",
     "react-native-app-auth": "^6.4.1",
@@ -43,7 +43,6 @@
     "@testing-library/react-native": "^8.0.0",
     "@types/classnames": "^2.3.1",
     "@types/color": "^3.0.2",
-    "@types/enzyme": "^3.10.11",
     "@types/fetch-mock": "^7.3.5",
     "@types/graphql": "^14.5.0",
     "@types/humps": "^2.0.1",
@@ -55,7 +54,6 @@
     "@types/react-native": "^0.67.3",
     "@typescript-eslint/eslint-plugin": "^4.31.1",
     "@typescript-eslint/parser": "^4.30.0",
-    "@wojtekmaj/enzyme-adapter-react-17": "^0.6.3",
     "babel-jest": "^27.3.1",
     "babel-loader": "^8.2.3",
     "eslint": "^7.32.0",
@@ -105,4 +103,4 @@
       "prettier --write"
     ]
   }
-  }
+}

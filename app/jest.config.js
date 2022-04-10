@@ -12,9 +12,9 @@ module.exports = {
   },
   setupFilesAfterEnv: [
     // './test/setup.js',
-    './node_modules/react-native-gesture-handler/jestSetup.js',
+    // './node_modules/react-native-gesture-handler/jestSetup.js',
   ],
-  snapshotSerializers: ['enzyme-to-json/serializer', 'jest-serializer-gql'],
+  // snapshotSerializers: ['enzyme-to-json/serializer', 'jest-serializer-gql'],
   testRegex: '/(\\w+)\\.test\\.tsx?$',
   testMatch: null,
   moduleDirectories: [
