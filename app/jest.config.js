@@ -7,8 +7,9 @@ module.exports = {
   testPathIgnorePatterns: ['/node_modules/', '/dist/'],
   transformIgnorePatterns: ['node_modules/(?!react-router-native)/'],
   transform: {
-    '^.+\\.jsx?$': '<rootDir>/node_modules/react-native/jest/preprocessor.js',
-    ...tsjPreset.transform,
+    // '^.+\\.jsx?$': '<rootDir>/node_modules/react-native/jest/preprocessor.js',
+    // ...tsjPreset.transform,
+    "^.+\\.[jt]sx?$": "babel-jest",
   },
   setupFilesAfterEnv: [
     require.resolve('regenerator-runtime/runtime'),
