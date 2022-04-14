@@ -1,2 +1,0 @@
-import Test from './test'
-
