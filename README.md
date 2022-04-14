@@ -36,8 +36,9 @@ yarn createComp `componentName` - Creates files for component, styles and test i
 ## Getting Started
 
 1. Clone the repo
-2. `sh initialSetup.sh` (might take a couple of attempts) 
-3. `yarn start`
+2. `sh addPreCommits.sh`
+3. `sh initialSetup.sh` (might take a couple of attempts) 
+4. `yarn start`
 
 
 ## Building The App
