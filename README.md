@@ -52,3 +52,5 @@ yarn createComp `componentName` - Creates files for component, styles and test i
 RCT-Folly (semantic issues): comment out `typedef uint8_t clockid_t` (need to do this after every refresh of pods)
 <React/**.h> file not found: in Xcode => Product => manage schemes => Find React in list and move above app
 
+### Android
+

@@ -1,20 +1,10 @@
-import {NavigationContainer} from '@react-navigation/native';
-import {createNativeStackNavigator} from '@react-navigation/native-stack';
+import React from 'react';
 
 import UnauthenticatedNavigation from '../unauthenticatedNavigation/';
-const Stack = createNativeStackNavigator();
 
 const MainNavigation = () => {
-  return (
-    <NavigationContainer>
-      <Stack.Navigator>
-        <Stack.Screen
-          name="UnauthenticatedNavigation"
-          component={UnauthenticatedNavigation}
-        />
-      </Stack.Navigator>
-    </NavigationContainer>
-  );
+  const authenticated = false;
+  if (!authenticated) return <UnauthenticatedNavigation />;
 };
 
 export default MainNavigation;
