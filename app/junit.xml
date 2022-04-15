@@ -1,23 +1,36 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuites name="jest tests" tests="5" failures="0" errors="0" time="3.314">
-  <testsuite name="undefined" errors="0" failures="0" skipped="0" timestamp="2022-04-15T17:23:38" time="0.956" tests="1">
+<testsuites name="jest tests" tests="6" failures="1" errors="0" time="3.087">
+  <testsuite name="undefined" errors="0" failures="0" skipped="0" timestamp="2022-04-15T17:33:21" time="0.941" tests="1">
+    <testcase classname=" passes" name=" passes" time="0.001">
+    </testcase>
+  </testsuite>
+  <testsuite name="authenticate tests" errors="0" failures="0" skipped="0" timestamp="2022-04-15T17:33:21" time="0.952" tests="1">
+    <testcase classname="authenticate tests tests authenticate methods" name="authenticate tests tests authenticate methods" time="0.01">
+    </testcase>
+  </testsuite>
+  <testsuite name="undefined" errors="0" failures="0" skipped="0" timestamp="2022-04-15T17:33:21" time="0.989" tests="1">
     <testcase classname=" passes" name=" passes" time="0.003">
     </testcase>
   </testsuite>
-  <testsuite name="undefined" errors="0" failures="0" skipped="0" timestamp="2022-04-15T17:23:38" time="0.96" tests="1">
-    <testcase classname=" passes" name=" passes" time="0.002">
+  <testsuite name="undefined" errors="0" failures="0" skipped="0" timestamp="2022-04-15T17:33:21" time="1.435" tests="1">
+    <testcase classname=" renders and shows sign in text" name=" renders and shows sign in text" time="0.126">
     </testcase>
   </testsuite>
-  <testsuite name="authenticate tests" errors="0" failures="0" skipped="0" timestamp="2022-04-15T17:23:38" time="0.962" tests="1">
-    <testcase classname="authenticate tests tests authenticate methods" name="authenticate tests tests authenticate methods" time="0.003">
+  <testsuite name="Container" errors="0" failures="1" skipped="0" timestamp="2022-04-15T17:33:21" time="2.088" tests="2">
+    <testcase classname="Container safe area renders" name="Container safe area renders" time="0.245">
     </testcase>
-  </testsuite>
-  <testsuite name="undefined" errors="0" failures="0" skipped="0" timestamp="2022-04-15T17:23:38" time="1.447" tests="1">
-    <testcase classname=" renders and shows sign in text" name=" renders and shows sign in text" time="0.123">
-    </testcase>
-  </testsuite>
-  <testsuite name="Container" errors="0" failures="0" skipped="0" timestamp="2022-04-15T17:23:38" time="2.321" tests="1">
-    <testcase classname="Container safe area renders" name="Container safe area renders" time="0.611">
+    <testcase classname="Container Text input avoids keyboard" name="Container Text input avoids keyboard" time="0.107">
+      <failure>TypeError: _reactNative2.Keyboard.emit is not a function
+    at fn (/Users/Flemmer_1/Downloads/alliapp-main/app-template/app/src/components/container/container.test.tsx:26:16)
+    at batchedUpdates (/Users/Flemmer_1/Downloads/alliapp-main/app-template/app/node_modules/react-test-renderer/cjs/react-test-renderer.development.js:13452:12)
+    at act (/Users/Flemmer_1/Downloads/alliapp-main/app-template/app/node_modules/react-test-renderer/cjs/react-test-renderer.development.js:15280:14)
+    at Object.&lt;anonymous&gt; (/Users/Flemmer_1/Downloads/alliapp-main/app-template/app/src/components/container/container.test.tsx:25:5)
+    at Object.asyncJestTest (/Users/Flemmer_1/Downloads/alliapp-main/app-template/app/node_modules/jest-jasmine2/build/jasmineAsyncInstall.js:106:37)
+    at /Users/Flemmer_1/Downloads/alliapp-main/app-template/app/node_modules/jest-jasmine2/build/queueRunner.js:45:12
+    at new Promise (&lt;anonymous&gt;)
+    at mapper (/Users/Flemmer_1/Downloads/alliapp-main/app-template/app/node_modules/jest-jasmine2/build/queueRunner.js:28:19)
+    at /Users/Flemmer_1/Downloads/alliapp-main/app-template/app/node_modules/jest-jasmine2/build/queueRunner.js:75:41
+    at processTicksAndRejections (node:internal/process/task_queues:96:5)</failure>
     </testcase>
   </testsuite>
 </testsuites>
