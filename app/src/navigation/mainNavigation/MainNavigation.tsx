@@ -7,6 +7,8 @@ const MainNavigation = () => {
   const authenticator = useAuthenticator();
   console.log(authenticator.authenticated);
   if (!authenticator.authenticated) return <UnauthenticatedNavigation />;
+
+  return <UnauthenticatedNavigation />;
 };
 
 export default MainNavigation;
