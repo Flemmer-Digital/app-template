@@ -6,7 +6,7 @@ interface HeaderProps {
   style?: any;
   children?: any;
   variation?: 'h1' | 'h2' | 'h3' | 'mini';
-  color: string;
+  color?: string;
 }
 
 const Header: React.FC<HeaderProps> = ({ style, children, variation, color }) => {

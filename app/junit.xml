@@ -1,23 +1,25 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuites name="jest tests" tests="5" failures="0" errors="0" time="2.851">
-  <testsuite name="undefined" errors="0" failures="0" skipped="0" timestamp="2022-04-15T18:29:07" time="0.944" tests="1">
+<testsuites name="jest tests" tests="6" failures="0" errors="0" time="2.767">
+  <testsuite name="authenticate tests" errors="0" failures="0" skipped="0" timestamp="2022-04-16T18:04:47" time="0.957" tests="1">
+    <testcase classname="authenticate tests tests authenticate methods" name="authenticate tests tests authenticate methods" time="0.002">
+    </testcase>
+  </testsuite>
+  <testsuite name="undefined" errors="0" failures="0" skipped="0" timestamp="2022-04-16T18:04:47" time="0.996" tests="1">
     <testcase classname=" passes" name=" passes" time="0.002">
     </testcase>
   </testsuite>
-  <testsuite name="authenticate tests" errors="0" failures="0" skipped="0" timestamp="2022-04-15T18:29:07" time="0.988" tests="1">
-    <testcase classname="authenticate tests tests authenticate methods" name="authenticate tests tests authenticate methods" time="0.004">
-    </testcase>
-  </testsuite>
-  <testsuite name="undefined" errors="0" failures="0" skipped="0" timestamp="2022-04-15T18:29:07" time="0.991" tests="1">
+  <testsuite name="undefined" errors="0" failures="0" skipped="0" timestamp="2022-04-16T18:04:47" time="0.994" tests="1">
     <testcase classname=" passes" name=" passes" time="0.002">
     </testcase>
   </testsuite>
-  <testsuite name="undefined" errors="0" failures="0" skipped="0" timestamp="2022-04-15T18:29:07" time="1.46" tests="1">
-    <testcase classname=" renders and shows sign in text" name=" renders and shows sign in text" time="0.121">
+  <testsuite name="undefined" errors="0" failures="0" skipped="0" timestamp="2022-04-16T18:04:47" time="1.492" tests="1">
+    <testcase classname=" renders and shows sign in text" name=" renders and shows sign in text" time="0.123">
     </testcase>
   </testsuite>
-  <testsuite name="undefined" errors="0" failures="0" skipped="0" timestamp="2022-04-15T18:29:07" time="1.875" tests="1">
-    <testcase classname=" renders and shows text" name=" renders and shows text" time="0.089">
+  <testsuite name="Text Component" errors="0" failures="0" skipped="0" timestamp="2022-04-16T18:04:47" time="1.818" tests="2">
+    <testcase classname="Text Component renders and shows text" name="Text Component renders and shows text" time="0.099">
+    </testcase>
+    <testcase classname="Text Component changes styles with style prop" name="Text Component changes styles with style prop" time="0.01">
     </testcase>
   </testsuite>
 </testsuites>

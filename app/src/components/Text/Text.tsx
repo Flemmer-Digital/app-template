@@ -5,12 +5,13 @@ import { Text } from 'react-native';
 interface TextProps {
   style?: any;
   children?: any;
+  color?: string;
 }
 
-const CustomText: React.FC<TextProps> = ({ style, children }) => {
+const CustomText: React.FC<TextProps> = ({ style, children, color }) => {
   return (
     <>
-      <Text style={[styles.base, style]}>{children}</Text>
+      <Text style={[styles.base, { color: color }, style]}>{children}</Text>
     </>
   );
 };
