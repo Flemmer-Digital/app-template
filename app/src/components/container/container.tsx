@@ -5,14 +5,12 @@ import { KeyboardAvoidingView, SafeAreaView } from 'react-native';
 interface ContainerProps {
   backgroundColor?: string;
   children?: React.ReactNode;
-  showSafeArea?: boolean;
   useKeyboardAvoidingView?: boolean;
 }
 
 const Container: React.FC<ContainerProps> = ({
   backgroundColor,
   children,
-  showSafeArea,
   useKeyboardAvoidingView,
 }) => {
   return (
@@ -22,10 +20,7 @@ const Container: React.FC<ContainerProps> = ({
         testID="safe-area"
       >
         {useKeyboardAvoidingView ? (
-          <KeyboardAvoidingView
-            style={{ backgroundColor: showSafeArea ? 'red' : 'transparent' }}
-            behavior="position"
-          >
+          <KeyboardAvoidingView behavior="position">
             <>{children}</>
           </KeyboardAvoidingView>
         ) : (
