@@ -5,7 +5,7 @@ export const vw = width / 100;
 
 const containerStyles = StyleSheet.create({
   safeArea: {
-    height: '100%',
+    flex: 1,
   },
 });
 
