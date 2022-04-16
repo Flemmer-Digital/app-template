@@ -6,21 +6,31 @@ interface ContainerProps {
   backgroundColor?: string;
   children?: React.ReactNode;
   showSafeArea?: boolean;
+  useKeyboardAvoidingView?: boolean;
 }
 
-const Container: React.FC<ContainerProps> = ({ backgroundColor, children, showSafeArea }) => {
+const Container: React.FC<ContainerProps> = ({
+  backgroundColor,
+  children,
+  showSafeArea,
+  useKeyboardAvoidingView,
+}) => {
   return (
     <>
       <SafeAreaView
         style={[styles.safeArea, { backgroundColor: backgroundColor }]}
         testID="safe-area"
       >
-        <KeyboardAvoidingView
-          style={{ backgroundColor: showSafeArea ? 'red' : 'transparent' }}
-          behavior="position"
-        >
-          <>{children}</>
-        </KeyboardAvoidingView>
+        {useKeyboardAvoidingView ? (
+          <KeyboardAvoidingView
+            style={{ backgroundColor: showSafeArea ? 'red' : 'transparent' }}
+            behavior="position"
+          >
+            <>{children}</>
+          </KeyboardAvoidingView>
+        ) : (
+          { children }
+        )}
       </SafeAreaView>
     </>
   );
