@@ -1,12 +1,12 @@
-import { authorize, AuthConfiguration } from 'react-native-app-auth';
+import {authorize, AuthConfiguration} from 'react-native-app-auth';
 
 import RWLock from '../synchronisation/RWLock';
 
-import { retrieveOauthToken, storeOauthToken } from './tokenStore';
+import {retrieveOauthToken, storeOauthToken} from './tokenStore';
 
-import NativeOauthToken from './NativeOauthToken';
+import NativeOauthToken from './nativeOauthToken';
 import nativeOauthConfig from './nativeOauthConfig';
-import { signOut } from './signout';
+import {signOut} from './signOut';
 
 let refreshing = false;
 const tokenLock = new RWLock();
@@ -21,7 +21,8 @@ const requestAccessToken = async (config: AuthConfiguration) => {
   await storeOauthToken(token);
 };
 
-const hasAccessToken = async (): Promise<boolean> => !!(await retrieveOauthToken());
+const hasAccessToken = async (): Promise<boolean> =>
+  !!(await retrieveOauthToken());
 
 const refreshToken = async () => {
   const token = await retrieveOauthToken();
@@ -86,7 +87,9 @@ interface AuthenticateArgs {
   storedTokenOnly: boolean;
 }
 
-export const authenticate = async ({ storedTokenOnly }: AuthenticateArgs): Promise<boolean> => {
+export const authenticate = async ({
+  storedTokenOnly,
+}: AuthenticateArgs): Promise<boolean> => {
   const hasToken = await hasAccessToken();
 
   if (hasToken) return true;
@@ -95,4 +98,4 @@ export const authenticate = async ({ storedTokenOnly }: AuthenticateArgs): Promi
   await requestAccessToken(await nativeOauthConfig());
 
   return true;
-  
+};

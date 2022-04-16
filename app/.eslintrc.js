@@ -1,6 +1,6 @@
 module.exports = {
   root: true,
-  extends: '@react-native-community',
+  extends: 'airbnb',
   parser: '@typescript-eslint/parser',
   plugins: ['@typescript-eslint'],
   overrides: [
