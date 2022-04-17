@@ -5,10 +5,10 @@ import UnauthenticatedNavigation from '../unauthenticatedNavigation/';
 
 const MainNavigation = () => {
   const authenticator = useAuthenticator();
-  console.log(authenticator.authenticated);
-  if (!authenticator.authenticated) return <UnauthenticatedNavigation />;
+  if (!authenticator.authenticated)
+    return <UnauthenticatedNavigation authenticator={authenticator} />;
 
-  return <UnauthenticatedNavigation />;
+  return <UnauthenticatedNavigation authenticator={authenticator} />;
 };
 
 export default MainNavigation;

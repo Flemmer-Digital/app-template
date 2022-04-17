@@ -6,11 +6,13 @@ import SignIn from '../../screens/Authentication/SignIn';
 
 const Stack = createStackNavigator();
 
-const UnauthenticatedNavigation = () => {
+const UnauthenticatedNavigation = ({authenticator}) => {
   return (
     <NavigationContainer>
       <Stack.Navigator>
-        <Stack.Screen name="SignIn" component={SignIn} />
+        <Stack.Screen name="SignIn">
+          {() => <SignIn authenticator={authenticator} />}
+        </Stack.Screen>
       </Stack.Navigator>
     </NavigationContainer>
   );

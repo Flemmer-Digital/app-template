@@ -1,13 +1,21 @@
 import React from 'react';
-import {View, Text} from 'react-native';
+import {View, Text, Pressable} from 'react-native';
 
 import style from './SignInViewStyles';
+import {Authenticator} from 'app/src/navigation/useAuthenticator';
 
-const SignInView = ({authenticator, navigation}): JSX.Element => {
+const SignInView = ({
+  authenticator,
+}: {
+  authenticator: Authenticator;
+}): JSX.Element => {
+  console.log(authenticator);
   return (
-    <View style={style.outerContainer}>
-      <Text style={style.text}>Sign In</Text>
-    </View>
+    <Pressable onPress={authenticator.authenticate}>
+      <View style={style.outerContainer}>
+        <Text style={style.text}>Sign In</Text>
+      </View>
+    </Pressable>
   );
 };
 
