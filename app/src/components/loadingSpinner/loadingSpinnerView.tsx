@@ -7,16 +7,25 @@ interface LoadingspinnerProps {
   size?: 'small' | 'large';
   fullscreen?: boolean;
   style: any;
+  loading: boolean;
 }
 
-const Loadingspinner: React.FC<LoadingspinnerProps> = ({ color, size, fullscreen, style }) => {
+const Loadingspinner: React.FC<LoadingspinnerProps> = ({
+  color,
+  size,
+  fullscreen,
+  style,
+  loading,
+}) => {
   const fullscreenStyle = fullscreen ? styles.fullscreen : {};
   const fullScreenSpinner = fullscreen ? styles.fullScreenSpinner : {};
   return (
     <>
-      <View style={[fullscreenStyle, style]}>
-        <ActivityIndicator color={color} size={size} style={fullScreenSpinner} />
-      </View>
+      {loading && (
+        <View style={[fullscreenStyle, style]}>
+          <ActivityIndicator color={color} size={size} style={fullScreenSpinner} />
+        </View>
+      )}
     </>
   );
 };
