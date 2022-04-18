@@ -9,7 +9,6 @@ const SignInView = ({
 }: {
   authenticator: Authenticator;
 }): JSX.Element => {
-  console.log(authenticator);
   return (
     <Pressable onPress={authenticator.authenticate}>
       <View style={style.outerContainer}>
