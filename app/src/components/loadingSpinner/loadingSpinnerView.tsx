@@ -4,7 +4,7 @@ import styles from './loadingSpinnerStyles';
 
 interface LoadingspinnerProps {
   color?: string;
-  size?: number;
+  size?: 'small' | 'large';
   fullscreen?: boolean;
 }
 
