@@ -1,2 +1,1 @@
-import Loadingspinner from './loadingSpinner'
-
+import Loadingspinner from './loadingSpinnerView';
