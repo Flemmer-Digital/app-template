@@ -2,27 +2,29 @@ import React from 'react';
 import { ActivityIndicator, View } from 'react-native';
 import styles from './loadingSpinnerStyles';
 
-interface LoadingspinnerProps {
+interface LoadingSpinnerProps {
   color?: string;
   size?: 'small' | 'large';
   fullscreen?: boolean;
-  style: any;
-  loading: boolean;
+  style?: any;
+  loading?: boolean;
+  testID?: string;
 }
 
-const Loadingspinner: React.FC<LoadingspinnerProps> = ({
+const LoadingSpinner: React.FC<LoadingSpinnerProps> = ({
   color,
   size,
   fullscreen,
   style,
   loading,
+  testID,
 }) => {
   const fullscreenStyle = fullscreen ? styles.fullscreen : {};
   const fullScreenSpinner = fullscreen ? styles.fullScreenSpinner : {};
   return (
     <>
-      {loading && (
-        <View style={[fullscreenStyle, style]}>
+      {!loading && (
+        <View style={[fullscreenStyle, style]} testID={testID}>
           <ActivityIndicator color={color} size={size} style={fullScreenSpinner} />
         </View>
       )}
@@ -30,4 +32,4 @@ const Loadingspinner: React.FC<LoadingspinnerProps> = ({
   );
 };
 
-export default Loadingspinner;
+export default LoadingSpinner;
