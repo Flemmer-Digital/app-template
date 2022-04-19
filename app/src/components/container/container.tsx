@@ -18,13 +18,17 @@ const Container: React.FC<ContainerProps> = ({
       <SafeAreaView
         style={[styles.safeArea, {backgroundColor: backgroundColor}]}
         testID="safe-area">
-        {hasKeyboardAvoidingView ? (
-          <KeyboardAvoidingView behavior="position">
-            <>{children}</>
-          </KeyboardAvoidingView>
-        ) : (
-          {children}
-        )}
+        <>
+          {hasKeyboardAvoidingView ? (
+            <KeyboardAvoidingView
+              behavior="position"
+              testID="containerAvoidingView">
+              <>{children}</>
+            </KeyboardAvoidingView>
+          ) : (
+            children
+          )}
+        </>
       </SafeAreaView>
     </>
   );
