@@ -1,30 +1,29 @@
 import React from 'react';
 import styles from './containerStyles';
-import { KeyboardAvoidingView, SafeAreaView } from 'react-native';
+import {KeyboardAvoidingView, SafeAreaView} from 'react-native';
 
 interface ContainerProps {
   backgroundColor?: string;
   children?: React.ReactNode;
-  useKeyboardAvoidingView?: boolean;
+  hasKeyboardAvoidingView?: boolean;
 }
 
 const Container: React.FC<ContainerProps> = ({
   backgroundColor,
   children,
-  useKeyboardAvoidingView,
+  hasKeyboardAvoidingView,
 }) => {
   return (
     <>
       <SafeAreaView
-        style={[styles.safeArea, { backgroundColor: backgroundColor }]}
-        testID="safe-area"
-      >
-        {useKeyboardAvoidingView ? (
+        style={[styles.safeArea, {backgroundColor: backgroundColor}]}
+        testID="safe-area">
+        {hasKeyboardAvoidingView ? (
           <KeyboardAvoidingView behavior="position">
             <>{children}</>
           </KeyboardAvoidingView>
         ) : (
-          { children }
+          {children}
         )}
       </SafeAreaView>
     </>
