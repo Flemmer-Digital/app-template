@@ -9,11 +9,20 @@ describe('TextView', () => {
     const {getByText} = render();
     expect(getByText('Styled Text')).toBeTruthy();
   });
+
   it('Renders and Changes styles with style prop', () => {
-    const {getByText} = render({style: {fontSize: 27}});
-    const styledText = getByText('Styled Text');
+    let {getByText} = render({style: {fontSize: 27}});
+    let styledText = getByText('Styled Text');
     expect(
       styledText.props.style.filter((item: any) => item?.fontSize === 27)
+        .length,
+    ).toEqual(1);
+
+    ({getByText} = render({style: {fontSize: 25}}));
+
+    styledText = getByText('Styled Text');
+    expect(
+      styledText.props.style.filter((item: any) => item?.fontSize === 25)
         .length,
     ).toEqual(1);
   });
