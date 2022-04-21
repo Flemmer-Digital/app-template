@@ -10,7 +10,7 @@ describe('TextView', () => {
     expect(getByText('Styled Text')).toBeTruthy();
   });
 
-  it('Renders and Changes styles with style prop', () => {
+  it('Renders and style prop changes style', () => {
     let {getByText} = render({style: {fontSize: 27}});
     let styledText = getByText('Styled Text');
     expect(
