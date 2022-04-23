@@ -9,17 +9,15 @@ jobs:
   test:
     name: Tests
     runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: app
     steps:
       - name: Checkout
         uses: actions/checkout@v2
 
-      - name: Enter directory
-        run: |
-          cd app
       - uses: actions/setup-node@master
       - uses: c-hive/gha-yarn-cache@v1
-        with:
-          directory: ./app
 
       - name: Install node modules
         run: |
