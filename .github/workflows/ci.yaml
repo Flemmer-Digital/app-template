@@ -22,8 +22,8 @@ jobs:
 
       - uses: actions/setup-node@master
       - uses: c-hive/gha-yarn-cache@v2
-          with:
-            directory: ./app
+        with:
+          directory: ./app
         
 
       - name: Install node modules
