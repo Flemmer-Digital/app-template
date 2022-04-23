@@ -19,7 +19,7 @@ jobs:
       - uses: actions/setup-node@master
       - uses: c-hive/gha-yarn-cache@v1
         with:
-          directory: app
+          directory: ./app
 
       - name: Install node modules
         run: |
