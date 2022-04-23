@@ -15,9 +15,14 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v2
+      - name: Print Directory
+        run: |
+          echo "$PWD"
 
       - uses: actions/setup-node@master
       - uses: c-hive/gha-yarn-cache@v1
+        working-directory: ./app
+        
 
       - name: Install node modules
         run: |
