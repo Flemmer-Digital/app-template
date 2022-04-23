@@ -15,9 +15,14 @@ jobs:
       - uses: actions/setup-node@master
       - uses: c-hive/gha-yarn-cache@v1
 
+      - name: Enter directory
+        run: |
+          cd app
+
       - name: Install node modules
         run: |
           yarn install
+
       - name: Run CI with Lefthook
         run: |
           yarn test
