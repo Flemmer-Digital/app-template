@@ -31,6 +31,7 @@ const useAuthenticator = (): Authenticator => {
 
       try {
         const result = await authenticate({storedTokenOnly});
+        console.log('authenticated result', result);
         setState(prevState => ({
           ...prevState,
           authenticating: false,

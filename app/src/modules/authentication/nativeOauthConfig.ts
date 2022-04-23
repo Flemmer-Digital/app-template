@@ -13,12 +13,12 @@ const googleAuthConfig = {
 //authenticate with rails database, need to add rails redirect to info.plist
 
 const deviseAuthConfig = {
-  clientId: '',
-  redirectUrl: '',
+  clientId: 'dbb86dc2-aa17-45b1-bc49-63fdb2acbf22',
+  redirectUrl: 'iosapp://oauth-redirect',
   scopes: [],
   serviceConfiguration: {
-    authorizationEndpoint: '', //localhost/oauth/authorize
-    tokenEndpoint: '', //localhost/oauth/token
+    authorizationEndpoint: 'http://localhost:3000/oauth/authorize',
+    tokenEndpoint: 'http://localhost:3000/oauth/token',
   },
   additionalParameters: {
     prompt: 'login',

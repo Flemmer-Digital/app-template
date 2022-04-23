@@ -6,6 +6,7 @@ import AuthenticatedNavigation from '../authenticatedNavigation';
 
 const MainNavigation = () => {
   const authenticator = useAuthenticator();
+  console.log('authenticator: ', authenticator);
   if (!authenticator.authenticated)
     return <UnauthenticatedNavigation authenticator={authenticator} />;
 
