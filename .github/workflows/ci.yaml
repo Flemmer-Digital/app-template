@@ -7,7 +7,7 @@ on:
 
 jobs:
   test:
-    name: Tests
+    name: Test
     runs-on: ubuntu-latest
     defaults:
       run:
@@ -16,20 +16,20 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v2
 
-      - name: Print Directory
-        run: |
-          echo "$PWD"
-
       - uses: actions/setup-node@master
       - uses: c-hive/gha-yarn-cache@v2
         with:
           directory: ./app
         
-
       - name: Install node modules
         run: |
           yarn install
 
-      - name: Run CI with Lefthook
+      - name: Run Jest Tests
         run: |
           yarn test
+      
+      - name: Build For iOS
+        run: |
+          yarn ios
+          
