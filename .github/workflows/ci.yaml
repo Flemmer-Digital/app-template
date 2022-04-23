@@ -31,7 +31,7 @@ jobs:
       
       - name: Install pods
         run: |
-          yar install:pods
+          yarn install:pods
 
       - name: Build For iOS
         run: |
