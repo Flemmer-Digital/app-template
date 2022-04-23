@@ -6,7 +6,7 @@ on:
       - feature/ci-script
 
 jobs:
-  iOS Build:
+  iOS-Build:
     name: Test
     runs-on: macOS-latest
     defaults:
