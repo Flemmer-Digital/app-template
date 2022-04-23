@@ -21,7 +21,9 @@ jobs:
           echo "$PWD"
 
       - uses: actions/setup-node@master
-      - uses: c-hive/gha-yarn-cache@v1
+      - uses: c-hive/gha-yarn-cache@v2
+          with:
+            directory: ./app
         
 
       - name: Install node modules
