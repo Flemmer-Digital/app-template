@@ -18,5 +18,5 @@ it('renders container', () => {
 
 it('removes keybordAvoiding View', () => {
   const { queryByTestId } = render({ hasKAV: false });
-  expect(queryByTestId('containerAvoidingView')).not.toBeNull();
+  expect(queryByTestId('containerAvoidingView')).toBeNull();
 });
