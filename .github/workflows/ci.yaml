@@ -6,9 +6,9 @@ on:
       - feature/ci-script
 
 jobs:
-  test:
+  iOS Build:
     name: Test
-    runs-on: ubuntu-latest
+    runs-on: macOS-latest
     defaults:
       run:
         working-directory: ./app
