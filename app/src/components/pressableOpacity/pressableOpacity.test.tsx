@@ -6,7 +6,7 @@ import TextView from '../Text';
 
 const render = (props?: any) =>
   testRender(
-    <PressableOpacity style={props.styles}>
+    <PressableOpacity style={props?.styles}>
       <TextView>pressableOpacity</TextView>
     </PressableOpacity>,
   );
