@@ -3,7 +3,7 @@ import {
   getGenericPassword,
   resetGenericPassword,
 } from 'react-native-keychain';
-import {NativeOauthToken} from './nativeOauthToken';
+import NativeOauthToken from './nativeOauthToken';
 
 let token: NativeOauthToken | null = null;
 

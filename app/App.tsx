@@ -9,7 +9,22 @@
  */
 
 import React from 'react';
+import {ApolloClient, InMemoryCache, ApolloProvider} from '@apollo/client';
 
 import MainNavigation from './src/navigation/mainNavigation';
 
-export default MainNavigation;
+const App = () => {
+  const [isDevelopment, setIsDevelopment] = React.useState(true);
+
+  const client = new ApolloClient({
+    uri: isDevelopment ? 'localhost:3000/graphql' : 'productionUrl',
+    cache: new InMemoryCache(),
+  });
+  return (
+    <ApolloProvider client={client}>
+      <MainNavigation />
+    </ApolloProvider>
+  );
+};
+
+export default App;

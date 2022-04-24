@@ -1,25 +1,24 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuites name="jest tests" tests="6" failures="0" errors="0" time="3.193">
-  <testsuite name="undefined" errors="0" failures="0" skipped="0" timestamp="2022-04-18T15:32:32" time="1.255" tests="1">
-    <testcase classname=" passes" name=" passes" time="0.001">
-    </testcase>
-  </testsuite>
-  <testsuite name="authenticate tests" errors="0" failures="0" skipped="0" timestamp="2022-04-18T15:32:32" time="1.268" tests="1">
-    <testcase classname="authenticate tests tests authenticate methods" name="authenticate tests tests authenticate methods" time="0.003">
-    </testcase>
-  </testsuite>
-  <testsuite name="undefined" errors="0" failures="0" skipped="0" timestamp="2022-04-18T15:32:32" time="1.273" tests="1">
+<testsuites name="jest tests" tests="6" failures="0" errors="0" time="3.3">
+  <testsuite name="undefined" errors="0" failures="0" skipped="0" timestamp="2022-04-18T14:25:45" time="1.194" tests="1">
     <testcase classname=" passes" name=" passes" time="0.003">
     </testcase>
   </testsuite>
-  <testsuite name="undefined" errors="0" failures="0" skipped="0" timestamp="2022-04-18T15:32:32" time="1.886" tests="1">
-    <testcase classname=" renders and shows sign in text" name=" renders and shows sign in text" time="0.13">
+  <testsuite name="undefined" errors="0" failures="0" skipped="0" timestamp="2022-04-18T14:25:45" time="1.233" tests="1">
+    <testcase classname=" passes" name=" passes" time="0.001">
     </testcase>
   </testsuite>
-  <testsuite name="undefined" errors="0" failures="0" skipped="0" timestamp="2022-04-18T15:32:32" time="2.171" tests="2">
-    <testcase classname=" renders and shows sign in text" name=" renders and shows sign in text" time="0.043">
-    </testcase>
-    <testcase classname=" dissapears when loading is true" name=" dissapears when loading is true" time="0.008">
+  <testsuite name="authenticate tests" errors="0" failures="0" skipped="0" timestamp="2022-04-18T14:25:45" time="1.238" tests="1">
+    <testcase classname="authenticate tests tests authenticate methods" name="authenticate tests tests authenticate methods" time="0.004">
     </testcase>
   </testsuite>
-</testsuites>
+  <testsuite name="undefined" errors="0" failures="0" skipped="0" timestamp="2022-04-18T14:25:45" time="1.822" tests="1">
+    <testcase classname=" renders and shows sign in text" name=" renders and shows sign in text" time="0.239">
+    </testcase>
+  </testsuite>
+  <testsuite name="Text Component" errors="0" failures="0" skipped="0" timestamp="2022-04-18T14:25:45" time="2.218" tests="2">
+    <testcase classname="Text Component renders and shows text" name="Text Component renders and shows text" time="0.119">
+    </testcase>
+    <testcase classname="Text Component changes styles with style prop" name="Text Component changes styles with style prop" time="0.008">
+    </testcase>
+  </testsuite>
