@@ -1,10 +1,10 @@
-import LoadingSpinner from './loadingSpinnerView';
+import LoadingSpinner, { LoadingSpinnerProps } from './loadingSpinnerView';
 import { render as testRender } from '@testing-library/react-native';
 import React from 'react';
 
-const render = (props: any) => testRender(<LoadingSpinner testID="spinner" />);
+const render = (props?: Partial<LoadingSpinnerProps>) => testRender(<LoadingSpinner />);
 
 it('renders', () => {
-  const { getByTestId } = render({ loading: false });
+  const { getByTestId } = render();
   expect(getByTestId('spinner')).toBeTruthy();
 });
