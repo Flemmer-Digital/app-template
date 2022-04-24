@@ -3,7 +3,10 @@ name: Continuous Integration
 on:
   push:
     branches:
-      - feature/ci-script
+      - main
+  pull_request:
+    branches:
+      - main
 
 jobs:
   iOS-Build:
