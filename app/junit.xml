@@ -1,35 +1,22 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuites name="jest tests" tests="6" failures="1" errors="0" time="3.008">
-  <testsuite name="undefined" errors="0" failures="0" skipped="0" timestamp="2022-04-19T12:44:19" time="1.015" tests="1">
-    <testcase classname=" passes" name=" passes" time="0.004">
-    </testcase>
-  </testsuite>
-  <testsuite name="undefined" errors="0" failures="0" skipped="0" timestamp="2022-04-19T12:44:19" time="1.018" tests="1">
+<testsuites name="jest tests" tests="5" failures="0" errors="0" time="7.917">
+  <testsuite name="undefined" errors="0" failures="0" skipped="0" timestamp="2022-04-18T16:36:28" time="2.425" tests="1">
     <testcase classname=" passes" name=" passes" time="0.002">
     </testcase>
   </testsuite>
-  <testsuite name="authenticate tests" errors="0" failures="0" skipped="0" timestamp="2022-04-19T12:44:19" time="1.015" tests="1">
-    <testcase classname="authenticate tests tests authenticate methods" name="authenticate tests tests authenticate methods" time="0.003">
+  <testsuite name="undefined" errors="0" failures="0" skipped="0" timestamp="2022-04-18T16:36:28" time="2.438" tests="1">
+    <testcase classname=" passes" name=" passes" time="0.002">
     </testcase>
   </testsuite>
-  <testsuite name="undefined" errors="0" failures="0" skipped="0" timestamp="2022-04-19T12:44:19" time="1.489" tests="1">
-    <testcase classname=" renders and shows sign in text" name=" renders and shows sign in text" time="0.122">
+  <testsuite name="undefined" errors="0" failures="0" skipped="0" timestamp="2022-04-18T16:36:28" time="2.44" tests="1">
+    <testcase classname=" passes" name=" passes" time="0.002">
     </testcase>
   </testsuite>
-  <testsuite name="undefined" errors="0" failures="1" skipped="0" timestamp="2022-04-19T12:44:19" time="1.963" tests="2">
-    <testcase classname=" renders container" name=" renders container" time="0.162">
-    </testcase>
-    <testcase classname=" removes keybordAvoiding View" name=" removes keybordAvoiding View" time="0.07">
-      <failure>Error: expect(received).toBeFalsy()
-
-Received: {&quot;_fiber&quot;: {&quot;_debugHookTypes&quot;: null, &quot;_debugID&quot;: 20, &quot;_debugNeedsRemount&quot;: false, &quot;_debugOwner&quot;: [FiberNode], &quot;_debugSource&quot;: null, &quot;actualDuration&quot;: 0, &quot;actualStartTime&quot;: -1, &quot;alternate&quot;: null, &quot;child&quot;: [FiberNode], &quot;childLanes&quot;: 0, &quot;dependencies&quot;: null, &quot;elementType&quot;: &quot;View&quot;, &quot;firstEffect&quot;: null, &quot;flags&quot;: 0, &quot;index&quot;: 0, &quot;key&quot;: null, &quot;lanes&quot;: 0, &quot;lastEffect&quot;: null, &quot;memoizedProps&quot;: [Object], &quot;memoizedState&quot;: null, &quot;mode&quot;: 0, &quot;nextEffect&quot;: null, &quot;pendingProps&quot;: [Object], &quot;ref&quot;: null, &quot;return&quot;: [FiberNode], &quot;selfBaseDuration&quot;: 0, &quot;sibling&quot;: null, &quot;stateNode&quot;: [Object], &quot;tag&quot;: 5, &quot;treeBaseDuration&quot;: 0, &quot;type&quot;: &quot;View&quot;, &quot;updateQueue&quot;: null}}
-    at Object.&lt;anonymous&gt; (/Users/Flemmer_1/Downloads/alliapp-main/app-template/app/src/components/container/container.test.tsx:14:50)
-    at Object.asyncJestTest (/Users/Flemmer_1/Downloads/alliapp-main/app-template/app/node_modules/jest-jasmine2/build/jasmineAsyncInstall.js:106:37)
-    at /Users/Flemmer_1/Downloads/alliapp-main/app-template/app/node_modules/jest-jasmine2/build/queueRunner.js:45:12
-    at new Promise (&lt;anonymous&gt;)
-    at mapper (/Users/Flemmer_1/Downloads/alliapp-main/app-template/app/node_modules/jest-jasmine2/build/queueRunner.js:28:19)
-    at /Users/Flemmer_1/Downloads/alliapp-main/app-template/app/node_modules/jest-jasmine2/build/queueRunner.js:75:41
-    at processTicksAndRejections (node:internal/process/task_queues:96:5)</failure>
+  <testsuite name="authenticate tests" errors="0" failures="0" skipped="0" timestamp="2022-04-18T16:36:28" time="2.467" tests="1">
+    <testcase classname="authenticate tests tests authenticate methods" name="authenticate tests tests authenticate methods" time="0.004">
     </testcase>
   </testsuite>
-</testsuites>
+  <testsuite name="undefined" errors="0" failures="0" skipped="0" timestamp="2022-04-18T16:36:28" time="6.693" tests="1">
+    <testcase classname=" renders and shows sign in text" name=" renders and shows sign in text" time="0.792">
+    </testcase>
+  </testsuite>
