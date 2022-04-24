@@ -1,5 +1,3 @@
-// 434565811503-q8014aondqou38fk9nfq4a6q4r1vsur0.apps.googleusercontent.com
-
 const googleAuthConfig = {
   issuer: 'https://accounts.google.com',
   clientId:
@@ -8,9 +6,6 @@ const googleAuthConfig = {
     'com.googleusercontent.apps.434565811503-q8014aondqou38fk9nfq4a6q4r1vsur0:/oauth2redirect/google',
   scopes: ['openid', 'profile'],
 };
-
-//TO DO:
-//authenticate with rails database, need to add rails redirect to info.plist
 
 const deviseAuthConfig = {
   clientId: 'dbb86dc2-aa17-45b1-bc49-63fdb2acbf22',
@@ -25,4 +20,4 @@ const deviseAuthConfig = {
   },
 };
 
-export default () => googleAuthConfig;
+export default () => deviseAuthConfig;

@@ -12,7 +12,7 @@ const SignInView = ({
   return (
     <Pressable onPress={authenticator.authenticate}>
       <View style={style.outerContainer}>
-        <Text style={style.text}>Sign In</Text>
+        <Text style={style.text}>Sign In/Register</Text>
       </View>
     </Pressable>
   );
