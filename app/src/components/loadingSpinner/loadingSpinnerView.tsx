@@ -1,12 +1,13 @@
 import React from 'react';
 import { ActivityIndicator, View } from 'react-native';
 import styles from './loadingSpinnerStyles';
+import type { ViewStyle } from 'react-native';
 
 interface LoadingSpinnerProps {
   color?: string;
   size?: 'small' | 'large';
   fullscreen?: boolean;
-  style?: any;
+  style?: ViewStyle;
   loading?: boolean;
   testID?: string;
 }
