@@ -95,7 +95,7 @@ export const authenticate = async ({
   if (hasToken) return true;
   if (storedTokenOnly) return false;
 
-  await requestAccessToken(await nativeOauthConfig());
+  await requestAccessToken(nativeOauthConfig());
 
   return true;
 };

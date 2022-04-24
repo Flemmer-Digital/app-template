@@ -2,13 +2,14 @@ import React from 'react';
 
 import useAuthenticator from '../useAuthenticator';
 import UnauthenticatedNavigation from '../unauthenticatedNavigation/';
+import AuthenticatedNavigation from '../authenticatedNavigation';
 
 const MainNavigation = () => {
   const authenticator = useAuthenticator();
-  console.log(authenticator.authenticated);
-  if (!authenticator.authenticated) return <UnauthenticatedNavigation />;
+  if (!authenticator.authenticated)
+    return <UnauthenticatedNavigation authenticator={authenticator} />;
 
-  return <UnauthenticatedNavigation />;
+  return <AuthenticatedNavigation authenticator={authenticator} />;
 };
 
 export default MainNavigation;
