@@ -33,14 +33,14 @@
 ### Commands
 yarn createComp `componentName` - Creates files for component, styles and test in the `src/components` directory
 
-## Getting Started
+## Critical Setup
 
 1. Clone the repo
 2. `sh addPreCommits.sh`
 3. `sh initialSetup.sh` (might take a couple of attempts) 
 4. `yarn start`
 
-### Authentication
+### Linking to the api
 
 ### Sentry
 Create a new project in sentry.
