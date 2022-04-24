@@ -10,7 +10,7 @@ on:
 
 jobs:
   iOS-Build:
-    name: Test
+    name: Build iOS
     runs-on: macOS-latest
     defaults:
       run:
