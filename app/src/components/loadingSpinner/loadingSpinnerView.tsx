@@ -23,13 +23,9 @@ const LoadingSpinner: React.FC<LoadingSpinnerProps> = ({
   const fullscreenStyle = fullscreen ? styles.fullscreen : {};
   const fullScreenSpinner = fullscreen ? styles.fullScreenSpinner : {};
   return (
-    <>
-      {!loading && (
-        <View style={[fullscreenStyle, style]} testID={testID}>
-          <ActivityIndicator color={color} size={size} style={fullScreenSpinner} />
-        </View>
-      )}
-    </>
+    <View style={[fullscreenStyle, style]} testID={testID}>
+      <ActivityIndicator color={color} size={size} style={fullScreenSpinner} />
+    </View>
   );
 };
 
