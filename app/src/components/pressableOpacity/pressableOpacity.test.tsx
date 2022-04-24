@@ -1,12 +1,12 @@
-import PressableOpacity from './pressableOpacityView';
+import PressableOpacity, { PressableOpacityProps } from './pressableOpacityView';
 import { render as testRender } from '@testing-library/react-native';
 import { Text } from 'react-native';
 import React from 'react';
 import TextView from '../Text';
 
-const render = (props?: any) =>
+const render = (props?: Partial<PressableOpacityProps>) =>
   testRender(
-    <PressableOpacity style={props?.styles}>
+    <PressableOpacity {...props}>
       <TextView>pressableOpacity</TextView>
     </PressableOpacity>,
   );

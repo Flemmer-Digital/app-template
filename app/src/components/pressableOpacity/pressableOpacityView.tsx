@@ -1,7 +1,7 @@
 import React from 'react';
 import { Pressable, Animated, ViewStyle } from 'react-native';
 
-interface PressableOpacityProps {
+export interface PressableOpacityProps {
   onPress: () => void;
   style?: ViewStyle;
   children: React.ReactNode;
