@@ -2,20 +2,21 @@ import {NavigationContainer} from '@react-navigation/native';
 import {createStackNavigator} from '@react-navigation/stack';
 import React from 'react';
 
-import SignIn from '../../screens/Authentication/SignIn';
+import AuthenticatedIndex from 'app/src/screens/AuthenticatedIndex';
 
 const Stack = createStackNavigator();
 
-const UnauthenticatedNavigation = ({authenticator}) => {
+const AuthenticatedNavigation = ({authenticator}) => {
   return (
     <NavigationContainer>
       <Stack.Navigator>
-        <Stack.Screen name="SignIn">
-          {() => <SignIn authenticator={authenticator} />}
-        </Stack.Screen>
+        <Stack.Screen
+          name="AuthenticatedIndex"
+          component={AuthenticatedIndex}
+        />
       </Stack.Navigator>
     </NavigationContainer>
   );
 };
 
-export default UnauthenticatedNavigation;
+export default AuthenticatedNavigation;
