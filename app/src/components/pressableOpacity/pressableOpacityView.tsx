@@ -1,9 +1,9 @@
 import React from 'react';
-import { Pressable, Animated } from 'react-native';
+import { Pressable, Animated, ViewStyle } from 'react-native';
 
 interface PressableOpacityProps {
   onPress: () => void;
-  style?: object;
+  style?: ViewStyle;
   children: React.ReactNode;
   onLayout?: (e: object) => void;
 }
