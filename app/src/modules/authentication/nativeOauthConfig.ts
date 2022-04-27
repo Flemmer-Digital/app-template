@@ -21,7 +21,7 @@ const deviseIOSConfig = {
 };
 
 const deviseAndroidConfig = {
-  clientId: 'dbb86dc2-aa17-45b1-bc49-63fdb2acbf22',
+  clientId: '4de6cabc-99e4-44d4-a410-4cbcce728956',
   redirectUrl: 'androidapp://oauth-redirect',
   scopes: [],
   serviceConfiguration: {
