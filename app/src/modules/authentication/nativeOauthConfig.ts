@@ -23,6 +23,7 @@ const deviseIOSConfig = {
 const deviseAndroidConfig = {
   clientId: '4de6cabc-99e4-44d4-a410-4cbcce728956',
   redirectUrl: 'androidapp://oauth-redirect',
+  dangerouslyAllowInsecureHttpRequests: __DEV__,
   scopes: [],
   serviceConfiguration: {
     authorizationEndpoint: 'http://localhost:3000/oauth/authorize',
