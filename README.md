@@ -74,6 +74,8 @@ export PATH=$PATH:$ANDROID_SDK_ROOT/emulator
 export PATH=$PATH:$ANDROID_SDK_ROOT/platform-tools
 
 run_android() {
-  cd ~/Documents/flemmer-digital-tech/templates/app-template/app && adb -s emulator-5554  reverse tcp:3000 tcp:3000 && yarn react-native run-android --appIdSuffix debug
+  cd ~/Documents/flemmer-digital-tech/templates/app-template/app && adb -s emulator-5554  reverse tcp:3000 tcp:3000 && yarn react-native run-android
 }
 ```
+
+then to run android do `run_android`
