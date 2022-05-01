@@ -1,7 +1,7 @@
 import React from 'react';
 import styles from './flexStyles';
 import Container from '../container';
-import { Animated, LayoutChangeEvent } from 'react-native';
+import { Animated, LayoutChangeEvent, ViewStyle } from 'react-native';
 
 interface FlexProps {
   direction: 'row' | 'column' | 'row-reverse' | 'column-reverse';
@@ -15,16 +15,26 @@ interface FlexProps {
   align?: 'flex-start' | 'flex-end' | 'center' | 'stretch' | 'baseline';
   wrap?: 'nowrap' | 'wrap' | 'wrap-reverse';
   children: React.ReactNode;
-  onLayout: (event: LayoutChangeEvent) => void;
+  style?: ViewStyle;
+  onLayout?: (event: LayoutChangeEvent) => void;
 }
 
-const Flex: React.FC<FlexProps> = ({ direction, justify, align, wrap, children, onLayout }) => {
+const Flex: React.FC<FlexProps> = ({
+  direction,
+  justify,
+  align,
+  wrap,
+  children,
+  onLayout,
+  style,
+}) => {
   return (
     <Animated.View
       style={[
         { justifyContent: justify, alignItems: align, flexDirection: direction, flexWrap: wrap },
         direction === 'row' || 'row-reverse' ? { width: '100%' } : { height: '100%' },
         styles.container,
+        style,
       ]}
       onLayout={onLayout}
     >
