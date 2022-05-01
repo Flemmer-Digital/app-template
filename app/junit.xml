@@ -1,24 +1,59 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuites name="jest tests" tests="6" failures="0" errors="0" time="3.3">
-  <testsuite name="undefined" errors="0" failures="0" skipped="0" timestamp="2022-04-18T14:25:45" time="1.194" tests="1">
+<testsuites name="jest tests" tests="14" failures="1" errors="0" time="3.806">
+  <testsuite name="undefined" errors="0" failures="0" skipped="0" timestamp="2022-05-01T12:15:50" time="1.263" tests="1">
+    <testcase classname=" passes" name=" passes" time="0.004">
+    </testcase>
+  </testsuite>
+  <testsuite name="authenticate tests" errors="0" failures="0" skipped="0" timestamp="2022-05-01T12:15:51" time="0.283" tests="1">
+    <testcase classname="authenticate tests tests authenticate methods" name="authenticate tests tests authenticate methods" time="0.003">
+    </testcase>
+  </testsuite>
+  <testsuite name="undefined" errors="0" failures="0" skipped="0" timestamp="2022-05-01T12:15:51" time="0.339" tests="1">
+    <testcase classname=" passes" name=" passes" time="0.002">
+    </testcase>
+  </testsuite>
+  <testsuite name="TextView" errors="0" failures="0" skipped="0" timestamp="2022-05-01T12:15:50" time="2.199" tests="2">
+    <testcase classname="TextView renders correctly" name="TextView renders correctly" time="0.24">
+    </testcase>
+    <testcase classname="TextView Renders and style prop changes style" name="TextView Renders and style prop changes style" time="0.016">
+    </testcase>
+  </testsuite>
+  <testsuite name="undefined" errors="0" failures="0" skipped="0" timestamp="2022-05-01T12:15:50" time="2.218" tests="1">
+    <testcase classname=" renders" name=" renders" time="0.045">
+    </testcase>
+  </testsuite>
+  <testsuite name="undefined" errors="0" failures="0" skipped="0" timestamp="2022-05-01T12:15:52" time="0.195" tests="1">
     <testcase classname=" passes" name=" passes" time="0.003">
     </testcase>
   </testsuite>
-  <testsuite name="undefined" errors="0" failures="0" skipped="0" timestamp="2022-04-18T14:25:45" time="1.233" tests="1">
-    <testcase classname=" passes" name=" passes" time="0.001">
+  <testsuite name="undefined" errors="0" failures="0" skipped="0" timestamp="2022-05-01T12:15:50" time="2.362" tests="2">
+    <testcase classname=" renders container" name=" renders container" time="0.383">
+    </testcase>
+    <testcase classname=" removes keybordAvoiding View" name=" removes keybordAvoiding View" time="0.011">
     </testcase>
   </testsuite>
-  <testsuite name="authenticate tests" errors="0" failures="0" skipped="0" timestamp="2022-04-18T14:25:45" time="1.238" tests="1">
-    <testcase classname="authenticate tests tests authenticate methods" name="authenticate tests tests authenticate methods" time="0.004">
+  <testsuite name="undefined" errors="0" failures="0" skipped="0" timestamp="2022-05-01T12:15:50" time="2.332" tests="1">
+    <testcase classname=" renders and shows sign in text" name=" renders and shows sign in text" time="0.194">
     </testcase>
   </testsuite>
-  <testsuite name="undefined" errors="0" failures="0" skipped="0" timestamp="2022-04-18T14:25:45" time="1.822" tests="1">
-    <testcase classname=" renders and shows sign in text" name=" renders and shows sign in text" time="0.239">
+  <testsuite name="undefined" errors="0" failures="0" skipped="0" timestamp="2022-05-01T12:15:50" time="2.541" tests="2">
+    <testcase classname=" renders" name=" renders" time="0.093">
+    </testcase>
+    <testcase classname=" runs function onPress" name=" runs function onPress" time="0.05">
     </testcase>
   </testsuite>
-  <testsuite name="Text Component" errors="0" failures="0" skipped="0" timestamp="2022-04-18T14:25:45" time="2.218" tests="2">
-    <testcase classname="Text Component renders and shows text" name="Text Component renders and shows text" time="0.119">
+  <testsuite name="undefined" errors="0" failures="1" skipped="0" timestamp="2022-05-01T12:15:50" time="2.503" tests="2">
+    <testcase classname=" renders" name=" renders" time="0.349">
     </testcase>
-    <testcase classname="Text Component changes styles with style prop" name="Text Component changes styles with style prop" time="0.008">
+    <testcase classname=" Renders and style prop changes style" name=" Renders and style prop changes style" time="0.015">
+      <failure>TypeError: styledFlex.props.style.filter is not a function
+    at Object.&lt;anonymous&gt; (/Users/Flemmer_1/Documents/github/app-template/app/src/components/flex/flex.test.tsx:17:33)
+    at Object.asyncJestTest (/Users/Flemmer_1/Documents/github/app-template/app/node_modules/jest-jasmine2/build/jasmineAsyncInstall.js:106:37)
+    at /Users/Flemmer_1/Documents/github/app-template/app/node_modules/jest-jasmine2/build/queueRunner.js:45:12
+    at new Promise (&lt;anonymous&gt;)
+    at mapper (/Users/Flemmer_1/Documents/github/app-template/app/node_modules/jest-jasmine2/build/queueRunner.js:28:19)
+    at /Users/Flemmer_1/Documents/github/app-template/app/node_modules/jest-jasmine2/build/queueRunner.js:75:41
+    at processTicksAndRejections (node:internal/process/task_queues:96:5)</failure>
     </testcase>
   </testsuite>
+</testsuites>

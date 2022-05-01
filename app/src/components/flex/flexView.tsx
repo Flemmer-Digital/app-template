@@ -3,7 +3,7 @@ import styles from './flexStyles';
 import Container from '../container';
 import { Animated, LayoutChangeEvent, ViewStyle } from 'react-native';
 
-interface FlexProps {
+export interface FlexProps {
   direction: 'row' | 'column' | 'row-reverse' | 'column-reverse';
   justify?:
     | 'flex-start'
@@ -30,6 +30,7 @@ const Flex: React.FC<FlexProps> = ({
 }) => {
   return (
     <Animated.View
+      testID="flex"
       style={[
         { justifyContent: justify, alignItems: align, flexDirection: direction, flexWrap: wrap },
         direction === 'row' || 'row-reverse' ? { width: '100%' } : { height: '100%' },
