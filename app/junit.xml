@@ -1,24 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuites name="jest tests" tests="6" failures="0" errors="0" time="3.3">
-  <testsuite name="undefined" errors="0" failures="0" skipped="0" timestamp="2022-04-18T14:25:45" time="1.194" tests="1">
-    <testcase classname=" passes" name=" passes" time="0.003">
+<testsuites name="jest tests" tests="5" failures="0" errors="0" time="2.905">
+  <testsuite name="undefined" errors="0" failures="0" skipped="0" timestamp="2022-05-01T15:57:59" time="2.228" tests="5">
+    <testcase classname=" it automatically starts a stored token authenticate on render" name=" it automatically starts a stored token authenticate on render" time="0.018">
+    </testcase>
+    <testcase classname=" handles an error on stored token authenticate" name=" handles an error on stored token authenticate" time="0.011">
+    </testcase>
+    <testcase classname=" exposes a manual athenticate method that calls authenticate without token" name=" exposes a manual athenticate method that calls authenticate without token" time="0.005">
+    </testcase>
+    <testcase classname=" handles errors raised when manually authenticating" name=" handles errors raised when manually authenticating" time="0.004">
+    </testcase>
+    <testcase classname=" does not prevent access to the app if notification registration fails" name=" does not prevent access to the app if notification registration fails" time="0.003">
     </testcase>
   </testsuite>
-  <testsuite name="undefined" errors="0" failures="0" skipped="0" timestamp="2022-04-18T14:25:45" time="1.233" tests="1">
-    <testcase classname=" passes" name=" passes" time="0.001">
-    </testcase>
-  </testsuite>
-  <testsuite name="authenticate tests" errors="0" failures="0" skipped="0" timestamp="2022-04-18T14:25:45" time="1.238" tests="1">
-    <testcase classname="authenticate tests tests authenticate methods" name="authenticate tests tests authenticate methods" time="0.004">
-    </testcase>
-  </testsuite>
-  <testsuite name="undefined" errors="0" failures="0" skipped="0" timestamp="2022-04-18T14:25:45" time="1.822" tests="1">
-    <testcase classname=" renders and shows sign in text" name=" renders and shows sign in text" time="0.239">
-    </testcase>
-  </testsuite>
-  <testsuite name="Text Component" errors="0" failures="0" skipped="0" timestamp="2022-04-18T14:25:45" time="2.218" tests="2">
-    <testcase classname="Text Component renders and shows text" name="Text Component renders and shows text" time="0.119">
-    </testcase>
-    <testcase classname="Text Component changes styles with style prop" name="Text Component changes styles with style prop" time="0.008">
-    </testcase>
-  </testsuite>
+</testsuites>
