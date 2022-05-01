@@ -1,5 +1,10 @@
+type TColors = {
+  primary: string;
+  secondary: string;
+};
+
 interface IThemeSettings {
-  colors: {primary: string; secondary: string};
+  colors: TColors;
 }
 
 const themeSettings: IThemeSettings = {
