@@ -1,7 +1,7 @@
 import React from 'react';
 import styles from './flexStyles';
 import Container from '../container';
-import { View } from 'react-native';
+import { Animated } from 'react-native';
 
 interface FlexProps {
   direction: 'row' | 'column' | 'row-reverse' | 'column-reverse';
@@ -18,7 +18,17 @@ interface FlexProps {
 }
 
 const Flex: React.FC<FlexProps> = ({ direction, justify, align, wrap, children }) => {
-  return <View style={styles.container}>{children}</View>;
+  return (
+    <Animated.View
+      style={[
+        { justifyContent: justify, alignItems: align, flexDirection: direction },
+        direction === 'row' || 'row-reverse' ? { width: '100%' } : { height: '100%' },
+        styles.container,
+      ]}
+    >
+      {children}
+    </Animated.View>
+  );
 };
 
 export default Flex;
