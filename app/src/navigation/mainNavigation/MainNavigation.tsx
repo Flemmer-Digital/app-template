@@ -9,7 +9,7 @@ const MainNavigation = () => {
   if (!authenticator.authenticated)
     return <UnauthenticatedNavigation authenticator={authenticator} />;
 
-  return <AuthenticatedNavigation authenticator={authenticator} />;
+  return <AuthenticatedNavigation />;
 };
 
 export default MainNavigation;
