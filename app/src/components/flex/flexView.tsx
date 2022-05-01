@@ -22,7 +22,7 @@ const Flex: React.FC<FlexProps> = ({ direction, justify, align, wrap, children, 
   return (
     <Animated.View
       style={[
-        { justifyContent: justify, alignItems: align, flexDirection: direction },
+        { justifyContent: justify, alignItems: align, flexDirection: direction, flexWrap: wrap },
         direction === 'row' || 'row-reverse' ? { width: '100%' } : { height: '100%' },
         styles.container,
       ]}
