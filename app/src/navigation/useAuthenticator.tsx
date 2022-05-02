@@ -1,6 +1,6 @@
 import React from 'react';
 
-import {useApolloClient} from '@apollo/client';
+// import {useApolloClient} from '@apollo/client';
 import * as Sentry from '@sentry/react-native';
 
 import {authenticate} from 'app/src/modules/authentication/authenticate';
@@ -23,7 +23,7 @@ const defaultState = {
 
 const useAuthenticator = (): Authenticator => {
   const [state, setState] = React.useState(defaultState);
-  const apolloClient = useApolloClient();
+  // const apolloClient = useApolloClient();
 
   const authenticateWithState = React.useCallback(
     async (storedTokenOnly: boolean) => {
@@ -66,7 +66,8 @@ const useAuthenticator = (): Authenticator => {
         Sentry.captureException(err);
       }
     },
-    [apolloClient],
+    [],
+    // [apolloClient],
   );
 
   React.useEffect(() => {

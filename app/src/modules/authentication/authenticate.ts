@@ -1,11 +1,14 @@
-import {authorize, AuthConfiguration} from 'react-native-app-auth';
+import {
+  authorize,
+  AuthConfiguration as RNAppAuthConfiguration,
+} from 'react-native-app-auth';
 
 import RWLock from '../synchronisation/RWLock';
 
 import {retrieveOauthToken, storeOauthToken} from './tokenStore';
 
 import NativeOauthToken from './nativeOauthToken';
-import nativeOauthConfig from './nativeOauthConfig';
+import nativeOauthConfig, {AuthConfiguration} from './nativeOauthConfig';
 import {signOut} from './signOut';
 
 let refreshing = false;
@@ -14,7 +17,7 @@ const tokenLock = new RWLock();
 export class ExpiredAccessTokenException extends Error {}
 
 const requestAccessToken = async (config: AuthConfiguration) => {
-  const result = await authorize(config);
+  const result = await authorize(config as RNAppAuthConfiguration);
 
   const token = new NativeOauthToken(result.accessToken, result.refreshToken);
 
@@ -33,7 +36,7 @@ const refreshToken = async () => {
 
   try {
     await token.refresh();
-  } catch (ex) {
+  } catch (ex: any) {
     if (ex.message && ex.message.includes('invalid_grant')) {
       await signOut();
     }

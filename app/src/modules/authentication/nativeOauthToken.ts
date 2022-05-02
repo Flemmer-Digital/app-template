@@ -1,4 +1,4 @@
-import {refresh} from 'react-native-app-auth';
+import {AuthConfiguration, refresh} from 'react-native-app-auth';
 import {differenceInSeconds} from 'date-fns';
 import {storeOauthToken} from './tokenStore';
 import {signOut} from './signOut';
@@ -23,7 +23,7 @@ export default class NativeOauthToken {
       if (!this.refreshToken) throw new Error('No refresh token');
 
       const {accessToken, refreshToken} = await refresh(
-        await nativeOauthConfig(),
+        nativeOauthConfig() as AuthConfiguration,
         {refreshToken: this.refreshToken},
       );
 
