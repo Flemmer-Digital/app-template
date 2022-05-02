@@ -9,7 +9,7 @@ module.exports = {
   transform: {
     // '^.+\\.jsx?$': '<rootDir>/node_modules/react-native/jest/preprocessor.js',
     // ...tsjPreset.transform,
-    "^.+\\.[jt]sx?$": "babel-jest",
+    '^.+\\.[jt]sx?$': 'babel-jest',
   },
   setupFilesAfterEnv: [
     require.resolve('regenerator-runtime/runtime'),
@@ -22,7 +22,7 @@ module.exports = {
   moduleDirectories: [
     '<rootDir>/node_modules',
     '<rootDir>../node_modules',
-    '<rootDir>/src',
+    '.',
   ],
   moduleFileExtensions: [
     'ts',
