@@ -6,7 +6,7 @@ import AuthenticatedIndex from 'app/src/screens/AuthenticatedIndex';
 
 const Stack = createStackNavigator();
 
-const AuthenticatedNavigation = ({authenticator}) => {
+const AuthenticatedNavigation = () => {
   return (
     <NavigationContainer>
       <Stack.Navigator>

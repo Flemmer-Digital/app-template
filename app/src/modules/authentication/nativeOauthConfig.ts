@@ -1,3 +1,18 @@
+type ServiceConfiguration = {
+  authorizationEndpoint: string;
+  tokenEndpoint: string;
+};
+
+export interface AuthConfiguration {
+  clientId: string;
+  redirectUrl: string;
+  scopes: string[];
+  issuer?: string;
+  dangerouslyAllowInsecureHttpRequests?: boolean;
+  serviceConfiguration?: ServiceConfiguration;
+  additionalParameters?: {prompt: string};
+}
+
 const googleIOSConfig = {
   issuer: 'https://accounts.google.com',
   clientId:
@@ -34,4 +49,4 @@ const deviseAndroidConfig = {
   },
 };
 
-export default () => deviseAndroidConfig;
+export default (): AuthConfiguration => deviseAndroidConfig;
