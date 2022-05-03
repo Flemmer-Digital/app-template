@@ -5,35 +5,50 @@ import { Animated, LayoutChangeEvent, ViewStyle } from 'react-native';
 
 export interface FlexProps {
   direction: 'row' | 'column' | 'row-reverse' | 'column-reverse';
-  justify?:
+  justifyContent:
     | 'flex-start'
     | 'flex-end'
     | 'center'
     | 'space-between'
     | 'space-around'
     | 'space-evenly';
-  align?: 'flex-start' | 'flex-end' | 'center' | 'stretch' | 'baseline';
+  alignItems: 'flex-start' | 'flex-end' | 'center' | 'stretch' | 'baseline';
+  alignContent?:
+    | 'flex-start'
+    | 'flex-end'
+    | 'center'
+    | 'stretch'
+    | 'space-between'
+    | 'space-around';
   wrap?: 'nowrap' | 'wrap' | 'wrap-reverse';
-  children: React.ReactNode;
   style?: ViewStyle;
   onLayout?: (event: LayoutChangeEvent) => void;
+  children: React.ReactNode;
 }
 
 const Flex: React.FC<FlexProps> = ({
   direction,
-  justify,
-  align,
+  justifyContent,
+  alignItems,
+  alignContent,
   wrap,
   children,
   onLayout,
   style,
 }) => {
+  const directionIsRow = direction === 'row' || 'row-reverse';
   return (
     <Animated.View
       testID="flex"
       style={[
-        { justifyContent: justify, alignItems: align, flexDirection: direction, flexWrap: wrap },
-        direction === 'row' || 'row-reverse' ? { width: '100%' } : { height: '100%' },
+        {
+          justifyContent: justifyContent,
+          alignItems: alignItems,
+          flexDirection: direction,
+          alignContent: alignContent,
+          flexWrap: wrap,
+        },
+        directionIsRow ? { width: '100%' } : { height: '100%' },
         styles.container,
         style,
       ]}
