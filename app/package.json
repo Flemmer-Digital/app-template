@@ -77,7 +77,6 @@
   "lint-staged": {
     "*.{js,jsx,ts,tsx,text.tsx, test.ts}": [
       "eslint --fix",
-      "eslint --fix --plugin tsc --rule 'tsc/config: [2, {configFile: \"./tsconfig.json\"}]",
       "prettier --write"
     ]
   }

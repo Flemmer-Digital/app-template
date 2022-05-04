@@ -23,7 +23,7 @@ describe('Flex', () => {
   it('Renders and style prop changes style', () => {
     let {getByTestId} = render({style: {width: 100}, direction: 'row'});
     let styledFlex = getByTestId('flex');
-    console.log(styledFlex.props.style);
+
     expect(styledFlex.props.style.width).toEqual(100);
 
     ({getByTestId} = render({style: {width: 25}}));
