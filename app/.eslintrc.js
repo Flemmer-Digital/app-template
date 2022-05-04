@@ -5,6 +5,7 @@ module.exports = {
   plugins: ['@typescript-eslint', 'prettier'],
   rules: {
     'prettier/prettier': 'error',
+    'no-console': ['error'],
   },
   overrides: [
     {
@@ -13,7 +14,6 @@ module.exports = {
         '@typescript-eslint/no-shadow': ['error'],
         'no-shadow': 'off',
         'no-undef': 'off',
-        'no-console': ['error', {allow: ['warn', 'error']}],
       },
     },
   ],
