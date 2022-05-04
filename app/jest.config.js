@@ -36,7 +36,6 @@ module.exports = {
   ],
   resetMocks: true,
   restoreMocks: true,
-  reporters: ['default', 'jest-junit'],
   coverageDirectory: 'test-report/native',
   coverageReporters: ['text', 'cobertura'],
   watchPathIgnorePatterns: ['<rootDir>/node_modules/'],

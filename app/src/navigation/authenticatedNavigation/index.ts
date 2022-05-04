@@ -1,3 +1,3 @@
-import AuthenticatedIndex from 'app/src/screens/AuthenticatedIndex';
+import AuthenticatedNavigationContainer from './AuthenticatedNavigation';
 
-export default AuthenticatedIndex;
+export default AuthenticatedNavigationContainer;
