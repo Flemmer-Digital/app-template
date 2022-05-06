@@ -3,6 +3,7 @@ import styles from './buttonStyles';
 import Flex from '../flex';
 import PressableOpacity from '../pressableOpacity';
 import Text from '../Text';
+import LoadingSpinner from '../loadingSpinner';
 import { ViewStyle } from 'react-native';
 
 export interface ButtonProps {
@@ -12,6 +13,7 @@ export interface ButtonProps {
   icon?: React.ReactNode;
   disabled?: boolean;
   loading?: boolean;
+  loadingColor?: string;
   loadingText?: string;
 }
 
@@ -23,11 +25,23 @@ const Button: React.FC<ButtonProps> = ({
   disabled,
   loading,
   loadingText,
+  loadingColor,
 }) => {
   return (
     <PressableOpacity onPress={onPress} style={styles.container}>
       <Flex direction="row" justifyContent="space-around" alignItems="center" style={style}>
-        <Text>{text}</Text>
+        {loading ? (
+          <>
+            <LoadingSpinner
+              size={'small'}
+              style={{ position: 'absolute', left: '15%' }}
+              color={loadingColor}
+            />
+            <Text>{loadingText}</Text>
+          </>
+        ) : (
+          <Text>{text}</Text>
+        )}
       </Flex>
     </PressableOpacity>
   );
