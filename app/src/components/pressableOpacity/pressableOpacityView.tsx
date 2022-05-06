@@ -31,7 +31,7 @@ const PressableOpacity = ({ children, style, onPress }: any) => {
       onPressIn={fadeIn}
       onPressOut={fadeOut}
       onPress={onPress}
-      style={[{ opacity: animated }, style]}
+      style={[{ opacity: animated, overflow: 'hidden' }, style]}
     >
       {children}
     </AnimatedPressable>
