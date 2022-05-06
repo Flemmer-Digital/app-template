@@ -5,21 +5,29 @@ import PressableOpacity from '../pressableOpacity';
 import Text from '../Text';
 import { ViewStyle } from 'react-native';
 
-interface ButtonProps {
+export interface ButtonProps {
   style?: ViewStyle;
   onPress: () => void;
-  text: React.ReactNode | string;
-  icon: React.ReactNode;
+  text?: React.ReactNode | string;
+  icon?: React.ReactNode;
   disabled?: boolean;
   loading?: boolean;
   loadingText?: string;
 }
 
-const Button: React.FC<ButtonProps> = () => {
+const Button: React.FC<ButtonProps> = ({
+  style,
+  onPress,
+  text,
+  icon,
+  disabled,
+  loading,
+  loadingText,
+}) => {
   return (
-    <PressableOpacity>
-      <Flex direction="row" justifyContent="space-around" alignItems="center">
-        <Text>Button</Text>
+    <PressableOpacity onPress={onPress} style={styles.container}>
+      <Flex direction="row" justifyContent="space-around" alignItems="center" style={style}>
+        <Text>{text}</Text>
       </Flex>
     </PressableOpacity>
   );

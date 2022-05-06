@@ -1,3 +1,3 @@
-import Button from './primaryView';
+import Button from './primary';
 
 export default Button;
