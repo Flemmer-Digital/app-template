@@ -10,6 +10,7 @@ export interface ButtonProps {
   style?: ViewStyle;
   onPress: () => void;
   text?: React.ReactNode | string;
+  textColor?: string;
   icon?: React.ReactNode;
   disabled?: boolean;
   loading?: boolean;
@@ -26,6 +27,7 @@ const Button: React.FC<ButtonProps> = ({
   loading,
   loadingText,
   loadingColor,
+  textColor,
 }) => {
   return (
     <PressableOpacity
@@ -41,10 +43,10 @@ const Button: React.FC<ButtonProps> = ({
               style={{ position: 'absolute', left: '15%' }}
               color={loadingColor}
             />
-            <Text>{loadingText}</Text>
+            <Text color={textColor}>{loadingText}</Text>
           </>
         ) : (
-          <Text>{text}</Text>
+          <Text color={textColor}>{text}</Text>
         )}
       </Flex>
     </PressableOpacity>
