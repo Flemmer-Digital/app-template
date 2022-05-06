@@ -16,6 +16,13 @@ it('runs onPress', () => {
   expect(onPress).toHaveBeenCalled();
 });
 
+it('does not run onPress if disabled', () => {
+  const onPress = jest.fn();
+  const { getByText } = render({ text: 'Button', onPress, disabled: true });
+  fireEvent.press(getByText('Button'));
+  expect(onPress).not.toHaveBeenCalled();
+});
+
 it('renders loading', () => {
   const { getByText } = render({
     text: 'Button',

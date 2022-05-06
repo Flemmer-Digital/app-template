@@ -28,7 +28,11 @@ const Button: React.FC<ButtonProps> = ({
   loadingColor,
 }) => {
   return (
-    <PressableOpacity onPress={onPress} style={styles.container}>
+    <PressableOpacity
+      onPress={!disabled ? onPress : () => {}}
+      style={styles.container}
+      disabled={disabled}
+    >
       <Flex direction="row" justifyContent="space-around" alignItems="center" style={style}>
         {loading ? (
           <>
