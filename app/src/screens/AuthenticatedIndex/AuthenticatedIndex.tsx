@@ -1,7 +1,7 @@
 import React from 'react';
-import {Text} from 'react-native';
+import SignOutView from '../Authentication/SignOut/SignOutView';
 
-const AuthenticatedIndex = ({authenticator}) => {
-  return <Text>You Are Authenticated!</Text>;
+const AuthenticatedIndex = () => {
+  return <SignOutView />;
 };
 export default AuthenticatedIndex;

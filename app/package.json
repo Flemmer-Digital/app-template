@@ -9,6 +9,7 @@
     "start": "react-native start",
     "test": "jest",
     "lint": "eslint . --ext .js,.jsx,.ts,.tsx",
+    "typecheck": "yarn run tsc --noEmit",
     "createComp": "python3 scripts/createComponent.py"
   },
   "dependencies": {
@@ -75,6 +76,7 @@
   },
   "lint-staged": {
     "*.{js,jsx,ts,tsx,text.tsx, test.ts}": [
+      "eslint --fix",
       "prettier --write"
     ]
   }

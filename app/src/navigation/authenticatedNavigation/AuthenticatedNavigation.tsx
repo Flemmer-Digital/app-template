@@ -3,10 +3,16 @@ import {createStackNavigator} from '@react-navigation/stack';
 import React from 'react';
 
 import AuthenticatedIndex from 'app/src/screens/AuthenticatedIndex';
+import setCurrentPerson from 'app/src/components/utils/setCurrentPerson';
+import LoadingSpinner from 'app/src/components/loadingSpinner';
 
 const Stack = createStackNavigator();
 
-const AuthenticatedNavigation = ({authenticator}) => {
+const AuthenticatedNavigation = () => {
+  const {data, loading} = setCurrentPerson();
+  console.log(data);
+
+  if (loading) return <LoadingSpinner fullscreen />;
   return (
     <NavigationContainer>
       <Stack.Navigator>

@@ -10,19 +10,21 @@
 
 import React from 'react';
 import {ApolloClient, InMemoryCache, ApolloProvider} from '@apollo/client';
+import {SafeAreaProvider} from 'react-native-safe-area-context';
 
 import MainNavigation from './src/navigation/mainNavigation';
 
 const App = () => {
-  const [isDevelopment, setIsDevelopment] = React.useState(true);
-
   const client = new ApolloClient({
-    uri: isDevelopment ? 'localhost:3000/graphql' : 'productionUrl',
+    //change this once done buildApiUrl task
+    uri: __DEV__ ? 'http://localhost:3000/graphql' : 'productionUrl',
     cache: new InMemoryCache(),
   });
   return (
     <ApolloProvider client={client}>
-      <MainNavigation />
+      <SafeAreaProvider>
+        <MainNavigation />
+      </SafeAreaProvider>
     </ApolloProvider>
   );
 };

@@ -1,29 +1,33 @@
 # app-template
 
-## To Do
-### Authentication:
-- NativeOauthConfig.ts
-- UseAuthentication
-- Navigation
-- Add graphql
-- Testing
-- Api Integration
+### How to use this template
+To use this template there is some config required. Be warned if you don't follow the 'Setup' steps in this readme, you will feel the pain...
 
-### CI/CD
-- build before merging into master
+#### Setup: Getting Started
+1. Clone the repo
+2. `sh addPreCommits.sh`
+3. `sh initialSetup.sh` (might take a couple of attempts) 
+4. `yarn start`
 
-### Error Logger (sentry?)
+### Setup: Sentry
+Create a new project in sentry.
+Set up in index.js (docs)[https://docs.sentry.io/platforms/react-native/]
+run
+`npx @sentry/wizard -i reactNative -p ios android`
+then run:
+`yarn install:pods`
 
-## Packages
+### Setup: Linking to the Rails api
+Once the rails app is hosted somehwere, change the url in buildApiUrl.ts to the hosting url.
 
-### Authentication
-1. react-native-app-auth
-2. react-native-keychain
-
-### Utility
-1. date-fns
-2. react-native-restart
-3. lodash
+### Native Modules
+1. react-native-restart
+2. react-native-app-auth
+3. react-native-keychain
+4. @react-navigation
+5. react-native-gesture-handler
+6. react-native-safe-area-context
+7. react-native-screens
 
 ### Testing
 1. (Jest)[https://jestjs.io/]
@@ -32,23 +36,6 @@
 
 ### Commands
 yarn createComp `componentName` - Creates files for component, styles and test in the `src/components` directory
-
-## Critical Setup
-
-1. Clone the repo
-2. `sh addPreCommits.sh`
-3. `sh initialSetup.sh` (might take a couple of attempts) 
-4. `yarn start`
-
-### Linking to the api
-
-### Sentry
-Create a new project in sentry.
-Set up in index.js (docs)[https://docs.sentry.io/platforms/react-native/]
-run
-`npx @sentry/wizard -i reactNative -p ios android`
-then run:
-`yarn install:pods`
 
 ## Building The App
 ### Ios
