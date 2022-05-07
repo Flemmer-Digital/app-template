@@ -46,7 +46,10 @@ const Button: React.FC<ButtonProps> = ({
             <Text color={textColor}>{loadingText}</Text>
           </>
         ) : (
-          <Text color={textColor}>{text}</Text>
+          <>
+            {icon}
+            <Text color={textColor}>{text}</Text>
+          </>
         )}
       </Flex>
     </PressableOpacity>
