@@ -1,3 +1,3 @@
-import Button from './primary';
+import Button from './baseButton';
 
 export default Button;
