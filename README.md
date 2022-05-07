@@ -30,9 +30,12 @@ Once the rails app is hosted somehwere, change the url in buildApiUrl.ts to the 
 7. react-native-screens
 
 ### Testing
-1. (Jest)[https://jestjs.io/]
-2. (Jest Native)[https://testing-library.com/docs/ecosystem-jest-native/]
-3. (React Hooks)[https://react-hooks-testing-library.com/]
+1. Unit Test: `yarn test`
+2. Integration tests with Detox:
+`yarn react-native run-ios`
+`yarn start`
+`yarn detox build`
+`yarn detox test`
 
 ### Commands
 yarn createComp `componentName` - Creates files for component, styles and test in the `src/components` directory
