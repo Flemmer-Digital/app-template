@@ -14,7 +14,6 @@
   },
   "dependencies": {
     "@apollo/client": "^3.4.16",
-    "@googlicius/build-url": "^1.0.11",
     "@graphql-tools/mock": "^8.1.6",
     "@react-native-community/async-storage": "^1.12.1",
     "@react-navigation/bottom-tabs": "^6.2.0",

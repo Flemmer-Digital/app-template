@@ -5,7 +5,7 @@ module.exports = {
   plugins: ['@typescript-eslint', 'prettier'],
   rules: {
     'no-console': ['error'],
-    'max-len': ['error', {code: 80}],
+    'max-len': ['error', {code: 100}],
   },
   globals: {
     afterEach: false,
