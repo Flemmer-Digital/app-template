@@ -1,3 +1,6 @@
+import {Platform} from 'react-native';
+import buildApiUrl from 'src/modules/utils/buildApiUrl';
+
 type ServiceConfiguration = {
   authorizationEndpoint: string;
   tokenEndpoint: string;
@@ -18,6 +21,7 @@ const googleIOSConfig = {
   clientId:
     '434565811503-q8014aondqou38fk9nfq4a6q4r1vsur0.apps.googleusercontent.com',
   redirectUrl:
+    // eslint-disable-next-line
     'com.googleusercontent.apps.434565811503-q8014aondqou38fk9nfq4a6q4r1vsur0:/oauth2redirect/google',
   scopes: ['openid', 'profile'],
 };
@@ -27,8 +31,8 @@ const deviseIOSConfig = {
   redirectUrl: 'iosapp://oauth-redirect',
   scopes: [],
   serviceConfiguration: {
-    authorizationEndpoint: 'http://localhost:3000/oauth/authorize',
-    tokenEndpoint: 'http://localhost:3000/oauth/token',
+    authorizationEndpoint: buildApiUrl('/oauth/authorize'),
+    tokenEndpoint: buildApiUrl('/oauth/token'),
   },
   additionalParameters: {
     prompt: 'login',
@@ -41,12 +45,41 @@ const deviseAndroidConfig = {
   dangerouslyAllowInsecureHttpRequests: __DEV__,
   scopes: [],
   serviceConfiguration: {
-    authorizationEndpoint: 'http://localhost:3000/oauth/authorize',
-    tokenEndpoint: 'http://localhost:3000/oauth/token',
+    authorizationEndpoint: buildApiUrl('/oauth/authorize'),
+    tokenEndpoint: buildApiUrl('/oauth/token'),
   },
   additionalParameters: {
     prompt: 'login',
   },
 };
 
-export default (): AuthConfiguration => deviseAndroidConfig;
+const iosAuthMethod = {
+  rails: deviseIOSConfig,
+  google: googleIOSConfig,
+};
+
+const androidAuthMethods = {
+  rails: deviseAndroidConfig,
+  google: null,
+};
+
+type AuthenticationMethod = 'rails' | 'google';
+
+const authenticationConfig = (method: AuthenticationMethod) => {
+  let authConfig: AuthConfiguration | null;
+  switch (Platform.OS) {
+    case 'ios':
+      authConfig = iosAuthMethod[method];
+      break;
+    case 'android':
+      authConfig = androidAuthMethods[method];
+      break;
+    default:
+      authConfig = null;
+  }
+  if (!authConfig) throw 'Invalid Authentication Configuration';
+  return authConfig;
+};
+
+export default (method: AuthenticationMethod = 'rails'): AuthConfiguration =>
+  authenticationConfig(method);
