@@ -1,5 +1,6 @@
 import {Platform} from 'react-native';
-import buildApiUrl from 'src/modules/utils/buildApiUrl';
+// import buildApiUrl from 'src/modules/utils/buildApiUrl';
+import buildApiUrl from '../utils/buildApiUrl';
 
 type ServiceConfiguration = {
   authorizationEndpoint: string;
