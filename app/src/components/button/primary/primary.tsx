@@ -6,15 +6,15 @@ import {ViewStyle} from 'react-native';
 export interface PrimaryProps {
   text: string;
   onPress: () => void;
-  customStyle?: ViewStyle;
+  style?: ViewStyle;
 }
 
-const Primary: React.FC<PrimaryProps> = ({text, onPress, customStyle}) => {
+const Primary: React.FC<PrimaryProps> = ({text, onPress, style}) => {
   return (
     <Button
       text={text}
       onPress={onPress}
-      style={[styles.primary, customStyle]}
+      style={[styles.primary, style]}
       textStyle={styles.textStyle}
     />
   );
