@@ -12,9 +12,6 @@ export interface ButtonProps {
   text?: React.ReactNode | string;
   textStyle?: TextStyle;
   disabled?: boolean;
-  loading?: boolean;
-  loadingColor?: string;
-  loadingText?: string;
 }
 
 const Button: React.FC<ButtonProps> = ({
@@ -22,9 +19,6 @@ const Button: React.FC<ButtonProps> = ({
   onPress,
   text,
   disabled,
-  loading,
-  loadingText,
-  loadingColor,
   textStyle,
 }) => {
   return (
@@ -33,20 +27,7 @@ const Button: React.FC<ButtonProps> = ({
       style={[styles.container, style]}
       disabled={disabled}>
       <Flex direction="row" justifyContent="space-around" alignItems="center">
-        {loading ? (
-          <>
-            <LoadingSpinner
-              size={'small'}
-              style={{position: 'absolute', left: '15%'}}
-              color={loadingColor}
-            />
-            <Text style={textStyle}>{loadingText}</Text>
-          </>
-        ) : (
-          <>
-            <Text style={textStyle}>{text}</Text>
-          </>
-        )}
+        <Text style={textStyle}>{text}</Text>
       </Flex>
     </PressableOpacity>
   );
