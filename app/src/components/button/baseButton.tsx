@@ -4,13 +4,13 @@ import Flex from '../flex';
 import PressableOpacity from '../pressableOpacity';
 import Text from '../Text';
 import LoadingSpinner from '../loadingSpinner';
-import {ViewStyle} from 'react-native';
+import {ViewStyle, TextStyle} from 'react-native';
 
 export interface ButtonProps {
-  style?: ViewStyle;
+  style?: ViewStyle | Array<ViewStyle | undefined>;
   onPress: () => void;
   text?: React.ReactNode | string;
-  textColor?: string;
+  textStyle?: TextStyle;
   disabled?: boolean;
   loading?: boolean;
   loadingColor?: string;
@@ -25,18 +25,14 @@ const Button: React.FC<ButtonProps> = ({
   loading,
   loadingText,
   loadingColor,
-  textColor,
+  textStyle,
 }) => {
   return (
     <PressableOpacity
       onPress={!disabled ? onPress : () => {}}
-      style={styles.container}
+      style={[styles.container, style]}
       disabled={disabled}>
-      <Flex
-        direction="row"
-        justifyContent="space-around"
-        alignItems="center"
-        style={style}>
+      <Flex direction="row" justifyContent="space-around" alignItems="center">
         {loading ? (
           <>
             <LoadingSpinner
@@ -44,11 +40,11 @@ const Button: React.FC<ButtonProps> = ({
               style={{position: 'absolute', left: '15%'}}
               color={loadingColor}
             />
-            <Text color={textColor}>{loadingText}</Text>
+            <Text style={textStyle}>{loadingText}</Text>
           </>
         ) : (
           <>
-            <Text color={textColor}>{text}</Text>
+            <Text style={textStyle}>{text}</Text>
           </>
         )}
       </Flex>
