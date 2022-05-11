@@ -9,7 +9,7 @@ interface IThemeSettings {
 
 const themeSettings: IThemeSettings = {
   colors: {
-    primary: '#eb4034',
+    primary: '#FF478C',
     secondary: '#3443eb',
   },
 };
