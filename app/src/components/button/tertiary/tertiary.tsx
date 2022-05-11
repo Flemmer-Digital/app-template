@@ -7,15 +7,22 @@ export interface TertiaryProps {
   text: string;
   onPress: () => void;
   style?: ViewStyle;
+  disabled?: boolean;
 }
 
-const Tertiary: React.FC<TertiaryProps> = ({text, onPress, style}) => {
+const Tertiary: React.FC<TertiaryProps> = ({
+  text,
+  onPress,
+  style,
+  disabled,
+}) => {
   return (
     <Button
       text={text}
       onPress={onPress}
       style={[styles.tertiary, style]}
       textStyle={styles.textStyle}
+      disabled={disabled}
     />
   );
 };

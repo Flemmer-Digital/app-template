@@ -7,15 +7,17 @@ export interface PrimaryProps {
   text: string;
   onPress: () => void;
   style?: ViewStyle;
+  disabled?: boolean;
 }
 
-const Primary: React.FC<PrimaryProps> = ({text, onPress, style}) => {
+const Primary: React.FC<PrimaryProps> = ({text, onPress, style, disabled}) => {
   return (
     <Button
       text={text}
       onPress={onPress}
       style={[styles.primary, style]}
       textStyle={styles.textStyle}
+      disabled={disabled}
     />
   );
 };
