@@ -4,6 +4,7 @@ on:
   push:
     branches:
       - main
+      - workflows/run-actions-on-self-hosted
   pull_request:
     branches:
       - main
@@ -11,7 +12,7 @@ on:
 jobs:
   iOS-Build:
     name: Build iOS
-    runs-on: macOS-latest
+    runs-on: self-hosted
     defaults:
       run:
         working-directory: ./app
