@@ -35,6 +35,9 @@ jobs:
       
       - name: Install pods
         run: |
+          cd ios
+          bundle install
+          cd ..
           yarn install:pods
 
       - name: Build For iOS
