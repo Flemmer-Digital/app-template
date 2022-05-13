@@ -32,10 +32,6 @@ jobs:
       - name: Install node modules
         run: |
           yarn install
-
-      - name: Run Jest Tests
-        run: |
-          yarn test
       
       - name: Install pods
         run: |
