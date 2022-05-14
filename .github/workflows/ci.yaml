@@ -35,3 +35,9 @@ jobs:
       - name: Build For iOS
         run: |
           yarn ios
+
+      - name: Clean Up
+        if: always()
+        run: | 
+          echo "Cleaning up"
+          xcrun simctl shutdown all && xcrun simctl erase all
