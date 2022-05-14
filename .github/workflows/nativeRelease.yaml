@@ -13,7 +13,12 @@ jobs:
       run:
         working-directory: ./app
     steps:
-      - name: Check if native release is required
-        run: |
-          git diff --quiet HEAD main -- ./ios || echo 'ios folder has changes'
-          git diff --quiet HEAD main -- ./android || echo 'ios folder has changes'
+      - name: Check if native release is required for ios
+        run: | 
+         echo 'ios folder has changes'
+        if: git diff --quiet HEAD main -- ./ios
+
+      - name: Check if native release is required for ios
+        run: | 
+         echo 'android folder has changes'
+        if: git diff --quiet HEAD main -- ./android
