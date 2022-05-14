@@ -30,4 +30,4 @@ jobs:
 
       - name: Build For Android
         run: |
-          yarn android
+          cd android && ./gradlew assembleRelease
