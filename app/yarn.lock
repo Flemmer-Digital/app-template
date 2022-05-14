@@ -880,11 +880,6 @@
     minimatch "^3.1.2"
     strip-json-comments "^3.1.1"
 
-"@googlicius/build-url@^1.0.11":
-  version "1.0.11"
-  resolved "https://registry.yarnpkg.com/@googlicius/build-url/-/build-url-1.0.11.tgz#1c10e01662d5a40abcc5307754cee7c6ce8f16cf"
-  integrity sha512-lsY5Mf9+Vrf1mPsDgUNzMzU1SIQHIPc7aGaGthkrZMg4Ppmniaprai2yArYjHYVg/Sacf+oretpBpIoSVpSSRQ==
-
 "@graphql-codegen/add@^3.1.0":
   version "3.1.1"
   resolved "https://registry.yarnpkg.com/@graphql-codegen/add/-/add-3.1.1.tgz#e161ff1c7cdf74ce20b32f75f640f9592b9a18ca"
@@ -4853,7 +4848,7 @@ eslint-plugin-react-native@^3.8.1:
     "@babel/traverse" "^7.7.4"
     eslint-plugin-react-native-globals "^0.1.1"
 
-eslint-plugin-react@^7.19.0, eslint-plugin-react@^7.20.0:
+eslint-plugin-react@^7.19.0, eslint-plugin-react@^7.20.0, eslint-plugin-react@^7.29.4:
   version "7.29.4"
   resolved "https://registry.yarnpkg.com/eslint-plugin-react/-/eslint-plugin-react-7.29.4.tgz#4717de5227f55f3801a5fd51a16a4fa22b5914d2"
   integrity sha512-CVCXajliVh509PcZYRFyu/BoUEz452+jtQJq2b3Bae4v3xBUWPLCmtmBM+ZinG4MzwmxJgJ2M5rMqhqLVn7MtQ==

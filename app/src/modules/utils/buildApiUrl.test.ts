@@ -8,7 +8,7 @@ it('points to the dev graphql route', () => {
 });
 
 it('points to the dev graphql route, with some params', () => {
-  expect(buildApiUrl('/graphql', {queryParams: {id: 23}})).toEqual(
+  expect(buildApiUrl('/graphql', {id: 23})).toEqual(
     `${localGraphqlEndpoint}?id=23`,
   );
 });
@@ -22,7 +22,7 @@ it('points to production graphql routes', () => {
 it('points to production graphql routes, with params', () => {
   //@ts-ignore
   global.__DEV__ = false;
-  expect(buildApiUrl('/graphql', {queryParams: {filter: 'age'}})).toEqual(
+  expect(buildApiUrl('/graphql', {filter: 'age'})).toEqual(
     `${api.production.url}/graphql?filter=age`,
   );
 });

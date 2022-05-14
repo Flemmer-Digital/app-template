@@ -1,5 +1,4 @@
 import {Platform} from 'react-native';
-// import buildApiUrl from 'src/modules/utils/buildApiUrl';
 import buildApiUrl from '../utils/buildApiUrl';
 
 type ServiceConfiguration = {
@@ -15,6 +14,7 @@ export interface AuthConfiguration {
   dangerouslyAllowInsecureHttpRequests?: boolean;
   serviceConfiguration?: ServiceConfiguration;
   additionalParameters?: {prompt: string};
+  secret?: string
 }
 
 const googleIOSConfig = {
@@ -38,6 +38,7 @@ const deviseIOSConfig = {
   additionalParameters: {
     prompt: 'login',
   },
+  secret: 'NPZMTyV76d0zG_2j4Ux4Vr9z94clVXEMw5jngeCchsE'
 };
 
 const deviseAndroidConfig = {
@@ -52,6 +53,7 @@ const deviseAndroidConfig = {
   additionalParameters: {
     prompt: 'login',
   },
+  secret: 'fZDPcUTf1jFcTk25QrZDMda0tuIivvleEovnw389hy4'
 };
 
 const iosAuthMethod = {
