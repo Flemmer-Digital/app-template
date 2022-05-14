@@ -1,0 +1,19 @@
+name: Check for Native Release
+
+on:
+  pull_request:
+    branches:
+      - main
+
+jobs:
+  check-native-release:
+    name: Check Native Release
+    runs-on: self-hosted
+    defaults:
+      run:
+        working-directory: ./app
+    steps:
+      - name: Check if native release is required
+        run: |
+          git diff --quiet HEAD main -- ./ios || echo 'ios folder has changes' || exit 1
+          git diff --quiet HEAD main -- ./android || echo 'ios folder has changes' || exit 1

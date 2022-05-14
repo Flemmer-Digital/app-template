@@ -39,10 +39,6 @@ jobs:
       - name: Build For iOS
         run: |
           yarn ios
-      
-      - name: Fail if native changes
-        run: |
-          git diff --quiet HEAD main -- ../.github || echo changed
 
       - name: Clean Up
         if: always()
