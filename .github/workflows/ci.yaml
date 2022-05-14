@@ -16,6 +16,9 @@ jobs:
       run:
         working-directory: ./app
     steps:
+      - name: Cancel Incomplete Runs
+        uses: styfle/cancel-workflow-action@0.9.1
+
       - name: Checkout
         uses: actions/checkout@v2
 
