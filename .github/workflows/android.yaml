@@ -1,4 +1,4 @@
-name: Continuous Integration
+name: Android
 
 on:
   push:
@@ -10,8 +10,8 @@ on:
 
 jobs:
   iOS-Build:
-    name: Build iOS
-    runs-on: [self-hosted, macOS]
+    name: Build Android
+    runs-on: [self-hosted, windows]
     defaults:
       run:
         working-directory: ./app
@@ -27,20 +27,7 @@ jobs:
       - name: Install node modules
         run: |
           yarn install
-      
-      - name: Install pods
-        run: |
-          cd ios
-          bundle install
-          cd ..
-          yarn install:pods
 
-      - name: Build For iOS
+      - name: Build For Android
         run: |
-          yarn ios
-
-      - name: Clean Up
-        if: always()
-        run: | 
-          echo "Cleaning up"
-          xcrun simctl shutdown all && xcrun simctl erase all
+          yarn android
