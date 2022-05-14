@@ -2,7 +2,7 @@ import {gql} from '@apollo/client';
 
 const SetCurrentPersonQuery = gql`
   query SetCurrentUserQuery {
-    person {
+    currentPerson {
       id
     }
   }
