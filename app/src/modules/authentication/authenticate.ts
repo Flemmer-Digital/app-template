@@ -11,7 +11,7 @@ import NativeOauthToken from './nativeOauthToken';
 import nativeOauthConfig, {AuthConfiguration} from './nativeOauthConfig';
 import {signOut} from './signOut';
 import apiConfiguration from 'app/src/config/api';
-import { authenticateInApp, credentials } from './authorizeInApp'
+import {authenticateInApp, credentials} from './authorizeInApp';
 
 let refreshing = false;
 const tokenLock = new RWLock();
@@ -19,18 +19,21 @@ const tokenLock = new RWLock();
 export class ExpiredAccessTokenException extends Error {}
 
 export type RequestAccessTokenResult = {
-  accessToken: string,
-  refreshToken: string
-}
+  accessToken: string;
+  refreshToken: string;
+};
 
-const requestAccessToken = async (config: AuthConfiguration, loginCredentials?: credentials) => {
-  let result: RequestAccessTokenResult
-  const authType = apiConfiguration.authenticationLocation
-  if (authType === 'web') 
+const requestAccessToken = async (
+  config: AuthConfiguration,
+  loginCredentials?: credentials,
+) => {
+  let result: RequestAccessTokenResult;
+  const authType = apiConfiguration.authenticationLocation;
+  if (authType === 'web')
     result = await authorize(config as RNAppAuthConfiguration);
   else if (authType === 'app' && loginCredentials)
     result = await authenticateInApp(config, loginCredentials); //change this
-  else throw("Invalid Authentication Config")
+  else throw 'Invalid Authentication Config';
 
   const token = new NativeOauthToken(result.accessToken, result.refreshToken);
 
@@ -98,19 +101,22 @@ export const withAccessToken = async <T>(
 
 interface AuthenticateArgs {
   storedTokenOnly: boolean;
-  loginCredentials?: credentials
+  loginCredentials?: credentials;
 }
 
 export const authenticate = async ({
   storedTokenOnly,
-  loginCredentials
+  loginCredentials,
 }: AuthenticateArgs): Promise<boolean> => {
   const hasToken = await hasAccessToken();
 
   if (hasToken) return true;
   if (storedTokenOnly) return false;
 
-  await requestAccessToken(nativeOauthConfig(), loginCredentials && loginCredentials);
+  await requestAccessToken(
+    nativeOauthConfig(),
+    loginCredentials && loginCredentials,
+  );
 
   return true;
 };
