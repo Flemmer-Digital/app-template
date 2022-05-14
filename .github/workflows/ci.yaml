@@ -11,7 +11,7 @@ on:
 jobs:
   iOS-Build:
     name: Build iOS
-    runs-on: macOS-latest
+    runs-on: self-hosted
     defaults:
       run:
         working-directory: ./app
@@ -19,26 +19,17 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v2
 
-      - uses: ruby/setup-ruby@v1
-        with:
-          ruby-version: 3.0.2
-          bundler-cache: true
-
       - uses: actions/setup-node@master
-      - uses: c-hive/gha-yarn-cache@v2
-        with:
-          directory: ./app
         
       - name: Install node modules
         run: |
           yarn install
-
-      - name: Run Jest Tests
-        run: |
-          yarn test
       
       - name: Install pods
         run: |
+          cd ios
+          bundle install
+          cd ..
           yarn install:pods
 
       - name: Build For iOS
