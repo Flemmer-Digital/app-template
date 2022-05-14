@@ -15,5 +15,5 @@ jobs:
     steps:
       - name: Check if native release is required
         run: |
-          git diff --quiet HEAD main -- ./ios || echo 'ios folder has changes' || exit 1
-          git diff --quiet HEAD main -- ./android || echo 'ios folder has changes' || exit 1
+          git diff --quiet HEAD main -- ./ios || echo 'ios folder has changes'
+          git diff --quiet HEAD main -- ./android || echo 'ios folder has changes'
