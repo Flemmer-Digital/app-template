@@ -9,19 +9,29 @@
  */
 
 import React from 'react';
-import {ApolloClient, InMemoryCache, ApolloProvider} from '@apollo/client';
+import {ApolloClient, ApolloProvider} from '@apollo/client';
 import {SafeAreaProvider} from 'react-native-safe-area-context';
-
+import buildGraphqlClient from './src/modules/graphqlClient/buildGraphqlClient';
 import MainNavigation from './src/navigation/mainNavigation';
+import LoadingSpinner from './src/components/loadingSpinner';
 
 const App = () => {
-  const client = new ApolloClient({
-    //change this once done buildApiUrl task
-    uri: __DEV__ ? 'http://localhost:3000/graphql' : 'productionUrl',
-    cache: new InMemoryCache(),
-  });
+  const [apolloClient, setApolloClient] =
+    React.useState<ApolloClient<any> | null>(null);
+
+  const getApolloClient = async () => {
+    const client = await buildGraphqlClient();
+    setApolloClient(client);
+  };
+
+  React.useEffect(() => {
+    getApolloClient();
+  }, []);
+
+  if (!apolloClient) return <LoadingSpinner fullscreen />;
+
   return (
-    <ApolloProvider client={client}>
+    <ApolloProvider client={apolloClient}>
       <SafeAreaProvider>
         <MainNavigation />
       </SafeAreaProvider>
