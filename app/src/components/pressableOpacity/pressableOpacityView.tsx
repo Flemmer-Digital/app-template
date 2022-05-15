@@ -1,16 +1,17 @@
 import React from 'react';
-import { Pressable, Animated, ViewStyle } from 'react-native';
+import {Pressable, Animated, ViewStyle} from 'react-native';
 
 export interface PressableOpacityProps {
   onPress: () => void;
   style?: ViewStyle;
   children: React.ReactNode;
-  onLayout?: (e: object) => void;
+  disabled?: boolean;
 }
 
 const AnimatedPressable = Animated.createAnimatedComponent(Pressable);
-const PressableOpacity = ({ children, style, onPress }: any) => {
+const PressableOpacity = ({children, style, onPress, disabled}: any) => {
   const animated = new Animated.Value(1);
+  const opacity = disabled ? 0.5 : animated;
   const fadeIn = () => {
     Animated.timing(animated, {
       toValue: 0.5,
@@ -28,11 +29,10 @@ const PressableOpacity = ({ children, style, onPress }: any) => {
 
   return (
     <AnimatedPressable
-      onPressIn={fadeIn}
+      onPressIn={!disabled ? fadeIn : undefined}
       onPressOut={fadeOut}
       onPress={onPress}
-      style={[{ opacity: animated }, style]}
-    >
+      style={[{opacity: opacity, overflow: 'hidden'}, style]}>
       {children}
     </AnimatedPressable>
   );
