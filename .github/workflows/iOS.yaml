@@ -19,6 +19,8 @@ jobs:
       - name: Cancel Incomplete Runs
         uses: styfle/cancel-workflow-action@0.9.1
       
+      - name: Check if native release is required for ios
+        run: bash ../.github/scripts/nativeRelease.sh
 
       - name: Checkout
         uses: actions/checkout@v2
