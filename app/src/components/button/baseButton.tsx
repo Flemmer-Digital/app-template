@@ -8,7 +8,7 @@ import {ViewStyle, TextStyle} from 'react-native';
 export interface ButtonProps {
   style?: ViewStyle;
   onPress: () => void;
-  text?: React.ReactNode | string;
+  text: React.ReactNode | string;
   textStyle?: TextStyle;
   disabled?: boolean;
 }
