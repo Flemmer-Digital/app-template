@@ -1,4 +1,4 @@
-name: Continuous Integration
+name: Run iOS
 
 on:
   push:
@@ -11,23 +11,18 @@ on:
 jobs:
   iOS-Build:
     name: Build iOS
-    runs-on: self-hosted
+    runs-on: [self-hosted, macOS]
     defaults:
       run:
         working-directory: ./app
     steps:
+      - name: Cancel Incomplete Runs
+        uses: styfle/cancel-workflow-action@0.9.1
+
       - name: Checkout
         uses: actions/checkout@v2
 
-      # - uses: ruby/setup-ruby@v1
-      #   with:
-      #     ruby-version: 3.0.2
-      #     bundler-cache: true
-
       - uses: actions/setup-node@master
-      - uses: c-hive/gha-yarn-cache@v2
-        with:
-          directory: ./app
         
       - name: Install node modules
         run: |
@@ -43,3 +38,9 @@ jobs:
       - name: Build For iOS
         run: |
           yarn ios
+
+      - name: Clean Up
+        if: always()
+        run: | 
+          echo "Cleaning up"
+          xcrun simctl shutdown all && xcrun simctl erase all

@@ -1,13 +1,17 @@
-import buildUrl from '@googlicius/build-url';
 import api from 'app/src/config/api';
 
-type Params = {queryParams: {[key: string]: string | number}};
+type Params = {[key: string]: string | number | undefined};
 const buildApiUrl = (
   relativePath: string,
-  params: Params = {queryParams: {}},
+  params: Params = {},
 ) => {
   const baseUrl = __DEV__ ? 'http://localhost:3000' : api.production.url;
-  return buildUrl(baseUrl + relativePath, params);
+  let paramsString: string = '?'
+  Object.keys(params).forEach((key) => {
+    paramsString = `${paramsString}${key}=${params[key]}&`
+  })
+  
+  return `${baseUrl}${relativePath}${paramsString.slice(0, paramsString.length - 1)}`
 };
 
 export default buildApiUrl;

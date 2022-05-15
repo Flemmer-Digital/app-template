@@ -1,11 +1,11 @@
 module.exports = {
   root: true,
-  extends: ['prettier', 'eslint:recommended'],
+  extends: ['prettier', 'eslint:recommended', 'plugin:react/recommended'],
   parser: '@typescript-eslint/parser',
   plugins: ['@typescript-eslint', 'prettier'],
   rules: {
     'no-console': ['error'],
-    'max-len': ['error', {code: 80}],
+    'max-len': ['error', {code: 100}],
   },
   globals: {
     afterEach: false,
