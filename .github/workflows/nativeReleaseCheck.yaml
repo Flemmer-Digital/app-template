@@ -1,0 +1,22 @@
+name: Native Release Required Check
+
+on:
+  pull_request:
+    branches:
+      - main
+    paths:
+      - './app/ios/**'
+      - './app/android/**'
+
+jobs:
+  iOS-Build:
+    name: Check for native changes
+    runs-on: [self-hosted, macOS]
+    defaults:
+      run:
+        working-directory: ./app
+    steps:
+      - name: Check for native changes
+        run: |
+          echo 'Native changes present, please merge into a release branch'
+          exit 1
