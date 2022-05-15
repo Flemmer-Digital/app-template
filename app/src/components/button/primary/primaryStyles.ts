@@ -6,7 +6,7 @@ export const vw = width / 100;
 
 const primaryStyles = StyleSheet.create({
   textStyle: {
-    color: '#fff',
+    color: theme.text.primary,
     fontWeight: 'bold',
   },
   primary: {
