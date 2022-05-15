@@ -1,8 +1,8 @@
 import React from 'react';
 import styles from './buttonStyles';
-import Flex from '../flex';
-import PressableOpacity from '../pressableOpacity';
-import Text from '../Text';
+import Flex from '../../flex';
+import PressableOpacity from '../../pressableOpacity';
+import Text from '../../Text';
 import {ViewStyle, TextStyle} from 'react-native';
 
 export interface ButtonProps {
