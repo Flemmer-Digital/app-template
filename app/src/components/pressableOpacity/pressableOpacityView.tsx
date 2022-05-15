@@ -3,7 +3,7 @@ import {Pressable, Animated, ViewStyle} from 'react-native';
 
 export interface PressableOpacityProps {
   onPress: () => void;
-  style?: ViewStyle | ViewStyle[];
+  style?: ViewStyle;
   children: React.ReactNode;
   disabled?: boolean;
 }
