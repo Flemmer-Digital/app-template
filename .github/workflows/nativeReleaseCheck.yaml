@@ -5,8 +5,8 @@ on:
     branches:
       - main
     paths:
-      - './app/ios/**'
-      - './app/android/**'
+      - 'app/ios/**'
+      - 'app/android/**'
 
 jobs:
   iOS-Build:
