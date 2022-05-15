@@ -8,6 +8,7 @@ on:
       - 'app/ios/**'
       - 'app/android/**'
 
+
 jobs:
   iOS-Build:
     name: Check for native changes
