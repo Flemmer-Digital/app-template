@@ -15,7 +15,7 @@ jobs:
     steps:
 
       - name: Check if native release is required for ios
-        run: sh ./.github/scripts/nativeRelease.sh
+        run: bash ./.github/scripts/nativeRelease.sh
       #    echo 'ios folder has changes'
       #   if: git diff --quiet HEAD main -- ./ios
 
