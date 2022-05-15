@@ -4,7 +4,7 @@ import React from 'react';
 import * as Sentry from '@sentry/react-native';
 
 import {authenticate} from 'app/src/modules/authentication/authenticate';
-
+import {credentials} from '../modules/authentication/authorizeInApp';
 // import registerDevice from 'src/modules/firebase/notifications/register';
 // import sentrySetCurrentUser from 'app/src/components/utils/setCurrentUser';
 
@@ -12,7 +12,8 @@ export interface Authenticator {
   authenticated: boolean;
   authenticating: boolean;
   error: string | null;
-  authenticate: () => void;
+  // eslint-disable-next-line
+  authenticate: (loginCredentials?: credentials) => Promise<void>;
 }
 
 const defaultState = {
@@ -26,11 +27,11 @@ const useAuthenticator = (): Authenticator => {
   // const apolloClient = useApolloClient();
 
   const authenticateWithState = React.useCallback(
-    async (storedTokenOnly: boolean) => {
+    async (storedTokenOnly: boolean, loginCredentials?: credentials) => {
       setState(prevState => ({...prevState, authenticating: true}));
 
       try {
-        const result = await authenticate({storedTokenOnly});
+        const result = await authenticate({storedTokenOnly, loginCredentials});
         setState(prevState => ({
           ...prevState,
           authenticating: false,
@@ -44,11 +45,13 @@ const useAuthenticator = (): Authenticator => {
       } catch (err: any) {
         const errorString = err.toString();
 
-        // Ignore user cancellations, waiting on a better way to do this: https://github.com/FormidableLabs/react-native-app-auth/issues/565
+        // Ignore user cancellations,
+        // waiting on a better way to do this:
+        // https://github.com/FormidableLabs/react-native-app-auth/issues/565
         if (
           errorString === 'Error: User cancelled flow' ||
           errorString ===
-            'Error: The operation couldn’t be completed. (org.openid.appauth.general error -3.)'
+            'Error: The operation couldnt be completed. (org.openid.appauth.general error -3.)'
         ) {
           setState(prevState => ({
             ...prevState,
@@ -75,7 +78,8 @@ const useAuthenticator = (): Authenticator => {
   }, [authenticateWithState]);
 
   return {
-    authenticate: () => authenticateWithState(false),
+    authenticate: (loginCredentials?: credentials) =>
+      authenticateWithState(false, loginCredentials),
     authenticated: state.authenticated,
     authenticating: state.authenticating,
     error: state.error,

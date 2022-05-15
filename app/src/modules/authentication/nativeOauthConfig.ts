@@ -1,3 +1,6 @@
+import {Platform} from 'react-native';
+import buildApiUrl from '../utils/buildApiUrl';
+
 type ServiceConfiguration = {
   authorizationEndpoint: string;
   tokenEndpoint: string;
@@ -11,6 +14,7 @@ export interface AuthConfiguration {
   dangerouslyAllowInsecureHttpRequests?: boolean;
   serviceConfiguration?: ServiceConfiguration;
   additionalParameters?: {prompt: string};
+  secret?: string;
 }
 
 const googleIOSConfig = {
@@ -18,6 +22,7 @@ const googleIOSConfig = {
   clientId:
     '434565811503-q8014aondqou38fk9nfq4a6q4r1vsur0.apps.googleusercontent.com',
   redirectUrl:
+    // eslint-disable-next-line
     'com.googleusercontent.apps.434565811503-q8014aondqou38fk9nfq4a6q4r1vsur0:/oauth2redirect/google',
   scopes: ['openid', 'profile'],
 };
@@ -27,12 +32,13 @@ const deviseIOSConfig = {
   redirectUrl: 'iosapp://oauth-redirect',
   scopes: [],
   serviceConfiguration: {
-    authorizationEndpoint: 'http://localhost:3000/oauth/authorize',
-    tokenEndpoint: 'http://localhost:3000/oauth/token',
+    authorizationEndpoint: buildApiUrl('/oauth/authorize'),
+    tokenEndpoint: buildApiUrl('/oauth/token'),
   },
   additionalParameters: {
     prompt: 'login',
   },
+  secret: 'NPZMTyV76d0zG_2j4Ux4Vr9z94clVXEMw5jngeCchsE',
 };
 
 const deviseAndroidConfig = {
@@ -41,12 +47,42 @@ const deviseAndroidConfig = {
   dangerouslyAllowInsecureHttpRequests: __DEV__,
   scopes: [],
   serviceConfiguration: {
-    authorizationEndpoint: 'http://localhost:3000/oauth/authorize',
-    tokenEndpoint: 'http://localhost:3000/oauth/token',
+    authorizationEndpoint: buildApiUrl('/oauth/authorize'),
+    tokenEndpoint: buildApiUrl('/oauth/token'),
   },
   additionalParameters: {
     prompt: 'login',
   },
+  secret: 'fZDPcUTf1jFcTk25QrZDMda0tuIivvleEovnw389hy4',
 };
 
-export default (): AuthConfiguration => deviseAndroidConfig;
+const iosAuthMethod = {
+  rails: deviseIOSConfig,
+  google: googleIOSConfig,
+};
+
+const androidAuthMethods = {
+  rails: deviseAndroidConfig,
+  google: null,
+};
+
+type AuthenticationMethod = 'rails' | 'google';
+
+const authenticationConfig = (method: AuthenticationMethod) => {
+  let authConfig: AuthConfiguration | null;
+  switch (Platform.OS) {
+    case 'ios':
+      authConfig = iosAuthMethod[method];
+      break;
+    case 'android':
+      authConfig = androidAuthMethods[method];
+      break;
+    default:
+      authConfig = null;
+  }
+  if (!authConfig) throw 'Invalid Authentication Configuration';
+  return authConfig;
+};
+
+export default (method: AuthenticationMethod = 'rails'): AuthConfiguration =>
+  authenticationConfig(method);
