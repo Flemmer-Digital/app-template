@@ -20,7 +20,9 @@ jobs:
         uses: styfle/cancel-workflow-action@0.9.1
       
       - name: Check if native release is required for ios
-        run: bash ../.github/scripts/nativeRelease.sh
+        run: | 
+         echo 'ios folder has changes'
+        if: git diff --quiet HEAD main -- ./ios
 
       - name: Checkout
         uses: actions/checkout@v2
