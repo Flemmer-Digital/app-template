@@ -41,3 +41,4 @@ jobs:
         run: | 
           echo "Cleaning up"
           xcrun simctl shutdown all && xcrun simctl erase all
+          kill $(lsof -t -i:8081)
