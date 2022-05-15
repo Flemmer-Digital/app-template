@@ -3,11 +3,10 @@ import styles from './buttonStyles';
 import Flex from '../flex';
 import PressableOpacity from '../pressableOpacity';
 import Text from '../Text';
-import LoadingSpinner from '../loadingSpinner';
 import {ViewStyle, TextStyle} from 'react-native';
 
 export interface ButtonProps {
-  style?: ViewStyle | Array<ViewStyle | undefined>;
+  style?: ViewStyle;
   onPress: () => void;
   text?: React.ReactNode | string;
   textStyle?: TextStyle;

@@ -20,7 +20,7 @@ const Tertiary: React.FC<TertiaryProps> = ({
     <Button
       text={text}
       onPress={onPress}
-      style={[styles.tertiary, style]}
+      style={{...styles.tertiary, ...style}}
       textStyle={styles.textStyle}
       disabled={disabled}
     />

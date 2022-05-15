@@ -15,7 +15,7 @@ const Primary: React.FC<PrimaryProps> = ({text, onPress, style, disabled}) => {
     <Button
       text={text}
       onPress={onPress}
-      style={[styles.primary, style]}
+      style={{...styles.primary, ...style}}
       textStyle={styles.textStyle}
       disabled={disabled}
     />

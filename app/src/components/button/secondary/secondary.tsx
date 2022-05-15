@@ -20,7 +20,7 @@ const Secondary: React.FC<SecondaryProps> = ({
     <Button
       text={text}
       onPress={onPress}
-      style={[styles.secondary, style]}
+      style={{...styles.secondary, ...style}}
       textStyle={styles.textStyle}
       disabled={disabled}
     />
