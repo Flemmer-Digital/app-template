@@ -5,14 +5,13 @@ export interface PressableOpacityProps {
   onPress: () => void;
   style?: ViewStyle | ViewStyle[];
   children: React.ReactNode;
-  onLayout?: (e: object) => void;
   disabled?: boolean;
 }
 
 const AnimatedPressable = Animated.createAnimatedComponent(Pressable);
 const PressableOpacity = ({children, style, onPress, disabled}: any) => {
   const animated = new Animated.Value(1);
-  const disabledStyle = disabled ? 0.5 : animated;
+  const opacity = disabled ? 0.5 : animated;
   const fadeIn = () => {
     Animated.timing(animated, {
       toValue: 0.5,
@@ -33,7 +32,7 @@ const PressableOpacity = ({children, style, onPress, disabled}: any) => {
       onPressIn={!disabled ? fadeIn : undefined}
       onPressOut={fadeOut}
       onPress={onPress}
-      style={[{opacity: disabledStyle, overflow: 'hidden'}, style]}>
+      style={[{opacity: opacity, overflow: 'hidden'}, style]}>
       {children}
     </AnimatedPressable>
   );
