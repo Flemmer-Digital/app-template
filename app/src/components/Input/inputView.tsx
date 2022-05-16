@@ -2,6 +2,7 @@ import React from 'react';
 import styles from './inputStyles';
 import Flex from '../Flex';
 import Text from '../Text';
+import themeSettings from 'app/src/config/themeSettings';
 import {TextInput, ViewStyle, TextStyle} from 'react-native';
 
 export interface InputProps {
@@ -28,20 +29,18 @@ const Input: React.FC<InputProps> = ({
   return (
     <Flex
       direction="column"
-      justifyContent="space-around"
+      justifyContent="center"
       alignItems="flex-start"
       style={[styles.container, containerStyle]}>
-      <Text variation="mini" color="white" style={labelStyle}>
-        {label}
-      </Text>
+      <Text style={{...styles.label, ...labelStyle}}>{label}</Text>
       <Flex
         direction="row"
-        justifyContent="space-between"
+        justifyContent="flex-start"
         alignItems="center"
         style={styles.inputContainer}>
         <TextInput
           placeholder={placeholder}
-          placeholderTextColor="black"
+          placeholderTextColor={themeSettings.text.primaryTinted}
           value={value}
           onChangeText={e => onChangeText(e)}
           editable={!disabled}
