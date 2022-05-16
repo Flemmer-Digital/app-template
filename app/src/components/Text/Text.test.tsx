@@ -13,17 +13,11 @@ describe('TextView', () => {
   it('Renders and style prop changes style', () => {
     let {getByText} = render({style: {fontSize: 27}});
     let styledText = getByText('Styled Text');
-    expect(
-      styledText.props.style.filter((item: any) => item?.fontSize === 27)
-        .length,
-    ).toEqual(1);
+    expect(styledText.props.style.fontSize).toEqual(27);
 
     ({getByText} = render({style: {fontSize: 25}}));
 
     styledText = getByText('Styled Text');
-    expect(
-      styledText.props.style.filter((item: any) => item?.fontSize === 25)
-        .length,
-    ).toEqual(1);
+    expect(styledText.props.style.fontSize).toEqual(25);
   });
 });

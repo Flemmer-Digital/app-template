@@ -1,5 +1,4 @@
 import Input, {InputProps} from './inputView';
-import Text from '../text';
 import {render as testRender} from '@testing-library/react-native';
 import React from 'react';
 
