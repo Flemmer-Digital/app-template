@@ -3,6 +3,10 @@ import { render as testRender } from '@testing-library/react-native';
 import { Text } from 'react-native';
 import React from 'react';
 
+jest.mock('react-native-gesture-handler', () => {
+  const { View } = require('react-native');
+  return { TouchableWithoutFeedback: View };
+});
 const render = (props: any) =>
   testRender(
     <Container hasKeyboardAvoidingView={props.hasKAV}>

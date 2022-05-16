@@ -17,7 +17,7 @@ const inputStyles = StyleSheet.create({
   },
   input: {
     height: '100%',
-    width: '100%',
+    width: '90%',
   },
   label: {
     marginLeft: 10,

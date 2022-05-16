@@ -2,6 +2,8 @@ import React from 'react';
 import styles from './containerStyles';
 import {KeyboardAvoidingView, SafeAreaView} from 'react-native';
 import {useHeaderHeight} from '@react-navigation/elements';
+import {Keyboard} from 'react-native';
+import {TouchableWithoutFeedback} from 'react-native-gesture-handler';
 
 interface ContainerProps {
   backgroundColor?: string;
@@ -25,18 +27,20 @@ const Container: React.FC<ContainerProps> = ({
       <SafeAreaView
         style={[styles.safeArea, {backgroundColor: backgroundColor}]}
         testID="safe-area">
-        <>
-          {hasKeyboardAvoidingView ? (
-            <KeyboardAvoidingView
-              behavior="padding"
-              testID="containerAvoidingView"
-              keyboardVerticalOffset={headerHeight}>
-              <>{children}</>
-            </KeyboardAvoidingView>
-          ) : (
-            children
-          )}
-        </>
+        <TouchableWithoutFeedback onPress={Keyboard.dismiss} accessible={false}>
+          <>
+            {hasKeyboardAvoidingView ? (
+              <KeyboardAvoidingView
+                behavior="padding"
+                testID="containerAvoidingView"
+                keyboardVerticalOffset={headerHeight}>
+                <>{children}</>
+              </KeyboardAvoidingView>
+            ) : (
+              children
+            )}
+          </>
+        </TouchableWithoutFeedback>
       </SafeAreaView>
     </>
   );

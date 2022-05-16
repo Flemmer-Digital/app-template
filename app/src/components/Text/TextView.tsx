@@ -4,7 +4,7 @@ import {Animated, Text, TextStyle} from 'react-native';
 
 interface TextProps {
   style?: TextStyle;
-  children?: any;
+  children?: React.ReactNode;
   variation?: 'h1' | 'h2' | 'h3' | 'mini';
   color?: string;
 }
