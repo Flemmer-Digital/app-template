@@ -1,6 +1,7 @@
 import React from 'react';
 import styles from './containerStyles';
 import {KeyboardAvoidingView, SafeAreaView} from 'react-native';
+import {useHeaderHeight} from '@react-navigation/elements';
 
 interface ContainerProps {
   backgroundColor?: string;
@@ -13,6 +14,12 @@ const Container: React.FC<ContainerProps> = ({
   children,
   hasKeyboardAvoidingView,
 }) => {
+  let headerHeight;
+  try {
+    headerHeight = useHeaderHeight();
+  } catch (e) {
+    headerHeight = 10;
+  }
   return (
     <>
       <SafeAreaView
@@ -21,8 +28,9 @@ const Container: React.FC<ContainerProps> = ({
         <>
           {hasKeyboardAvoidingView ? (
             <KeyboardAvoidingView
-              behavior="position"
-              testID="containerAvoidingView">
+              behavior="padding"
+              testID="containerAvoidingView"
+              keyboardVerticalOffset={headerHeight}>
               <>{children}</>
             </KeyboardAvoidingView>
           ) : (
