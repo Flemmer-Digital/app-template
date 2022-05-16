@@ -9,8 +9,8 @@ export interface InputProps {
   placeholder?: string;
   labelStyle?: TextStyle;
   label?: string;
-  value?: string;
-  onChangeText?: (text: string) => void;
+  value: string;
+  onChangeText: (e: string) => void;
   disabled?: boolean;
   icon?: React.ReactNode;
 }
@@ -43,7 +43,7 @@ const Input: React.FC<InputProps> = ({
           placeholder={placeholder}
           placeholderTextColor="black"
           value={value}
-          onChangeText={onChangeText}
+          onChangeText={e => onChangeText(e)}
           editable={!disabled}
           style={styles.input}
         />
