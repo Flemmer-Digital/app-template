@@ -1,5 +1,6 @@
 import {StyleSheet, Dimensions} from 'react-native';
 const {width, height} = Dimensions.get('window');
+import themeSettings from 'app/src/config/themeSettings';
 export const vh = height / 100;
 export const vw = width / 100;
 
@@ -9,7 +10,7 @@ const inputStyles = StyleSheet.create({
     height: 80,
   },
   inputContainer: {
-    borderColor: '#ccc',
+    borderColor: themeSettings.colors.primary,
     borderWidth: 1,
     borderRadius: 5,
     height: 50,
