@@ -1,4 +1,5 @@
 import React from 'react';
+import styles from './flexStyles';
 import {Animated, LayoutChangeEvent, ViewStyle} from 'react-native';
 
 export interface FlexProps {
