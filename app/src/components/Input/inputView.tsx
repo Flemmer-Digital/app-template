@@ -3,27 +3,25 @@ import styles from './inputStyles';
 import Flex from '../Flex';
 import Text from '../Text';
 import themeSettings from 'app/src/config/themeSettings';
-import {TextInput, ViewStyle, TextStyle} from 'react-native';
+import {TextInput, ViewStyle, TextStyle, TextInputProps} from 'react-native';
 
 export interface InputProps {
   containerStyle?: ViewStyle;
-  placeholder?: string;
   labelStyle?: TextStyle;
   label?: string;
   value: string;
   onChangeText: (e: string) => void;
-  disabled?: boolean;
+  textInputProps?: TextInputProps;
   icon?: React.ReactNode;
 }
 
 const Input: React.FC<InputProps> = ({
   containerStyle,
   labelStyle,
-  placeholder,
+  textInputProps,
   label,
   value,
   onChangeText,
-  disabled,
   icon,
 }) => {
   return (
@@ -39,12 +37,12 @@ const Input: React.FC<InputProps> = ({
         alignItems="center"
         style={styles.inputContainer}>
         <TextInput
-          placeholder={placeholder}
+          testID="input"
           placeholderTextColor={themeSettings.text.primaryTinted}
           value={value}
           onChangeText={e => onChangeText(e)}
-          editable={!disabled}
           style={styles.input}
+          {...textInputProps}
         />
         {icon}
       </Flex>
