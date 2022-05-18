@@ -9,7 +9,6 @@ export interface InputProps {
   containerStyle?: ViewStyle;
   labelStyle?: TextStyle;
   label?: string;
-  value: string;
   onChangeText: (e: string) => void;
   textInputProps?: TextInputProps;
   icon?: React.ReactNode;
@@ -20,7 +19,6 @@ const Input: React.FC<InputProps> = ({
   labelStyle,
   textInputProps,
   label,
-  value,
   onChangeText,
   icon,
 }) => {
@@ -39,8 +37,7 @@ const Input: React.FC<InputProps> = ({
         <TextInput
           testID="input"
           placeholderTextColor={themeSettings.text.primaryTinted}
-          value={value}
-          onChangeText={e => onChangeText(e)}
+          onChangeText={onChangeText}
           style={styles.input}
           {...textInputProps}
         />

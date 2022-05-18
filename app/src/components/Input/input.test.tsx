@@ -6,7 +6,7 @@ import Text from '../Text';
 const onChangeText = jest.fn();
 
 const render = (props: Partial<InputProps>) =>
-  testRender(<Input value={'Test'} onChangeText={onChangeText} {...props} />);
+  testRender(<Input onChangeText={onChangeText} {...props} />);
 
 it('renders with icon', () => {
   const {getByText} = render({label: 'Email', icon: <Text>Test</Text>});
