@@ -13,7 +13,7 @@ import {ApolloClient, ApolloProvider} from '@apollo/client';
 import {SafeAreaProvider} from 'react-native-safe-area-context';
 import buildGraphqlClient from './src/modules/graphqlClient/buildGraphqlClient';
 import MainNavigation from './src/navigation/mainNavigation';
-import LoadingSpinner from './src/components/loadingSpinner';
+import LoadingSpinner from './src/components/LoadingSpinner';
 
 const App = () => {
   const [apolloClient, setApolloClient] =
