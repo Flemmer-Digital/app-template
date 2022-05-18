@@ -5,7 +5,7 @@ import Text from '../Text';
 
 const onChangeText = jest.fn();
 
-const render = (props: Partial<InputProps>) =>
+const render = (props?: Partial<InputProps>) =>
   testRender(<Input onChangeText={onChangeText} {...props} />);
 
 it('renders with icon', () => {
@@ -14,7 +14,7 @@ it('renders with icon', () => {
 });
 
 it('can change text', () => {
-  const {getByTestId} = render({label: 'Email'});
+  const {getByTestId} = render();
   const input = getByTestId('input');
   fireEvent.changeText(input, 'Testing');
   expect(onChangeText).lastCalledWith('Testing');
@@ -22,7 +22,6 @@ it('can change text', () => {
 
 it('can be disabled', () => {
   const {getByTestId} = render({
-    label: 'Email',
     textInputProps: {editable: false},
   });
   const input = getByTestId('input');
@@ -31,7 +30,6 @@ it('can be disabled', () => {
 
 it('can be secure', () => {
   const {getByTestId} = render({
-    label: 'Email',
     textInputProps: {secureTextEntry: true},
   });
   const input = getByTestId('input');
