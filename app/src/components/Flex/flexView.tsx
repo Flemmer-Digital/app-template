@@ -19,7 +19,7 @@ export interface FlexProps {
     | 'space-between'
     | 'space-around';
   wrap?: 'nowrap' | 'wrap' | 'wrap-reverse';
-  style?: ViewStyle | Array<ViewStyle | undefined>;
+  style?: ViewStyle;
   onLayout?: (event: LayoutChangeEvent) => void;
   children: React.ReactNode;
 }

@@ -27,7 +27,7 @@ const Input: React.FC<InputProps> = ({
       direction="column"
       justifyContent="center"
       alignItems="flex-start"
-      style={[styles.container, containerStyle]}>
+      style={{...styles.container, ...containerStyle}}>
       <Text style={{...styles.label, ...labelStyle}}>{label}</Text>
       <Flex
         direction="row"
