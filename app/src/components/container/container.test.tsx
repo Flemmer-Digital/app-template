@@ -1,12 +1,8 @@
 import Container from './container';
-import { render as testRender } from '@testing-library/react-native';
-import { Text } from 'react-native';
+import {render as testRender} from '@testing-library/react-native';
+import {Text} from 'react-native';
 import React from 'react';
 
-jest.mock('react-native-gesture-handler', () => {
-  const { View } = require('react-native');
-  return { TouchableWithoutFeedback: View };
-});
 const render = (props: any) =>
   testRender(
     <Container hasKeyboardAvoidingView={props.hasKAV}>
@@ -15,12 +11,12 @@ const render = (props: any) =>
   );
 
 it('renders container', () => {
-  const { getByTestId } = render({ hasKAV: true });
+  const {getByTestId} = render({hasKAV: true});
   expect(getByTestId('safe-area')).toBeTruthy();
   expect(getByTestId('containerAvoidingView')).toBeTruthy();
 });
 
 it('removes keybordAvoiding View', () => {
-  const { queryByTestId } = render({ hasKAV: false });
+  const {queryByTestId} = render({hasKAV: false});
   expect(queryByTestId('containerAvoidingView')).toBeNull();
 });
