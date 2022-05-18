@@ -1,9 +1,11 @@
 name: Build Android
 
 on:
-  push:
+  pull_request:
     branches:
       - main
+    paths:
+      - 'app/src/**'
 
 jobs:
   iOS-Build:
