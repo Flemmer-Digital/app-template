@@ -10,7 +10,10 @@ export interface InputProps {
   labelStyle?: TextStyle;
   label?: string;
   textInputProps?: TextInputProps;
+  value: string;
+  onChangeText: (text: string) => void;
   icon?: React.ReactNode;
+  iconPosition?: 'left' | 'right';
 }
 
 const Input: React.FC<InputProps> = ({
@@ -19,6 +22,9 @@ const Input: React.FC<InputProps> = ({
   textInputProps,
   label,
   icon,
+  value,
+  onChangeText,
+  iconPosition,
 }) => {
   return (
     <Flex
@@ -28,7 +34,7 @@ const Input: React.FC<InputProps> = ({
       style={{...styles.container, ...containerStyle}}>
       <Text style={{...styles.label, ...labelStyle}}>{label}</Text>
       <Flex
-        direction="row"
+        direction={iconPosition === 'right' ? 'row' : 'row-reverse'}
         justifyContent="flex-start"
         alignItems="center"
         style={styles.inputContainer}>
@@ -36,6 +42,8 @@ const Input: React.FC<InputProps> = ({
           testID="input"
           placeholderTextColor={themeSettings.text.primaryTinted}
           style={styles.input}
+          value={value}
+          onChangeText={onChangeText}
           {...textInputProps}
         />
         {icon}
