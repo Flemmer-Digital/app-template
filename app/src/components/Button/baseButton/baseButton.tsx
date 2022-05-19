@@ -22,7 +22,7 @@ const Button: React.FC<ButtonProps> = ({
 }) => {
   return (
     <PressableOpacity
-      onPress={!disabled ? onPress : undefined}
+      onPress={onPress}
       style={[styles.container, style]}
       disabled={disabled}>
       <Flex direction="row" justifyContent="space-around" alignItems="center">

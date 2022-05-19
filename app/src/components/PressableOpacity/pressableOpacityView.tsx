@@ -29,6 +29,7 @@ const PressableOpacity = ({children, style, onPress, disabled}: any) => {
 
   return (
     <AnimatedPressable
+      disabled={disabled}
       onPressIn={!disabled ? fadeIn : undefined}
       onPressOut={fadeOut}
       onPress={onPress}
