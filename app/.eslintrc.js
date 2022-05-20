@@ -10,6 +10,7 @@ module.exports = {
   plugins: ['@typescript-eslint', 'prettier'],
   rules: {
     'no-console': ['error'],
+    'no-shadow': ['error'],
     'max-len': ['error', {code: 100}],
   },
   globals: {
