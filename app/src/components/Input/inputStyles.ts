@@ -8,12 +8,13 @@ const inputStyles = StyleSheet.create({
   container: {
     width: '80%',
     height: 80,
+    paddingVertical: 15,
   },
   inputContainer: {
     borderColor: themeSettings.colors.primary,
     borderWidth: 1,
     borderRadius: 5,
-    height: 50,
+    height: '100%',
     paddingHorizontal: 10,
   },
   input: {

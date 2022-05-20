@@ -22,6 +22,7 @@ export interface InputProps {
   disabled?: boolean;
   secureTextEntry?: boolean;
   keyboardType?: KeyboardTypeOptions;
+  multiLine?: boolean;
 }
 
 const Input: React.FC<InputProps> = ({
@@ -36,6 +37,7 @@ const Input: React.FC<InputProps> = ({
   disabled,
   secureTextEntry,
   keyboardType,
+  multiLine,
 }) => {
   return (
     <Flex
@@ -59,6 +61,8 @@ const Input: React.FC<InputProps> = ({
           editable={!disabled}
           keyboardType={keyboardType}
           secureTextEntry={secureTextEntry}
+          multiline={multiLine}
+          textAlignVertical="top"
         />
         {icon}
       </Flex>

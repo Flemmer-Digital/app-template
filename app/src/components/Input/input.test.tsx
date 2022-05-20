@@ -37,3 +37,11 @@ it('can be secure', () => {
   const input = getByTestId('input');
   expect(input.props.secureTextEntry).toBe(true);
 });
+
+it('can be multiline', () => {
+  const {getByTestId} = render({
+    multiLine: true,
+  });
+  const input = getByTestId('input');
+  expect(input.props.multiline).toBe(true);
+});
