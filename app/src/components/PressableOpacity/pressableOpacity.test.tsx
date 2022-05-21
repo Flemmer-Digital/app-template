@@ -1,6 +1,5 @@
 import PressableOpacity, {PressableOpacityProps} from './pressableOpacityView';
 import {render as testRender, fireEvent} from '@testing-library/react-native';
-import {Text} from 'react-native';
 import React from 'react';
 import TextView from '../Text';
 
