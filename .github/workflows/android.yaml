@@ -1,9 +1,11 @@
 name: Build Android
 
 on:
-  push:
+  pull_request:
     branches:
       - main
+    paths:
+      - 'app/src/**'
 
 jobs:
   iOS-Build:
@@ -25,6 +27,8 @@ jobs:
         run: |
           yarn install
 
-      - name: Build For Android
+      - name: Clean and Build For Android
         run: |
-          cd android; ./gradlew assembleRelease
+          cd android
+          ./gradlew clean
+          ./gradlew assembleRelease

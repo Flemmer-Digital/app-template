@@ -1,4 +1,4 @@
-const {jsWithTs: tsjPreset} = require('ts-jest/presets');
+const { jsWithTs: tsjPreset } = require('ts-jest/presets');
 
 /** @type {import('ts-jest/dist/types').InitialOptionsTsJest} */
 module.exports = {
@@ -16,24 +16,12 @@ module.exports = {
     '<rootDir>/test/setup.js',
     // './node_modules/react-native-gesture-handler/jestSetup.js',
   ],
+  setupFiles: ['./node_modules/react-native-gesture-handler/jestSetup.js'],
   // snapshotSerializers: ['enzyme-to-json/serializer', 'jest-serializer-gql'],
   testRegex: '/(\\w+)\\.test\\.tsx?$',
   testMatch: null,
-  moduleDirectories: [
-    '<rootDir>/node_modules',
-    '<rootDir>../node_modules',
-    '.',
-  ],
-  moduleFileExtensions: [
-    'ts',
-    'tsx',
-    'native.ts',
-    'native.tsx',
-    'js',
-    'native.js',
-    'json',
-    'd.ts',
-  ],
+  moduleDirectories: ['<rootDir>/node_modules', '<rootDir>../node_modules', '.'],
+  moduleFileExtensions: ['ts', 'tsx', 'native.ts', 'native.tsx', 'js', 'native.js', 'json', 'd.ts'],
   resetMocks: true,
   restoreMocks: true,
   coverageDirectory: 'test-report/native',

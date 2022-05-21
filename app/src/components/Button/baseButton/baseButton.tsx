@@ -1,6 +1,6 @@
 import React from 'react';
 import styles from './buttonStyles';
-import Flex from '../../flex';
+import Flex from '../../Flex';
 import PressableOpacity from '../../pressableOpacity';
 import Text from '../../Text';
 import {ViewStyle, TextStyle} from 'react-native';
@@ -22,7 +22,7 @@ const Button: React.FC<ButtonProps> = ({
 }) => {
   return (
     <PressableOpacity
-      onPress={!disabled ? onPress : () => {}}
+      onPress={onPress}
       style={[styles.container, style]}
       disabled={disabled}>
       <Flex direction="row" justifyContent="space-around" alignItems="center">

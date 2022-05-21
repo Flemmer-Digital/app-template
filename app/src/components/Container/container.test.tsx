@@ -1,6 +1,6 @@
 import Container from './container';
-import { render as testRender } from '@testing-library/react-native';
-import { Text } from 'react-native';
+import {render as testRender} from '@testing-library/react-native';
+import {Text} from 'react-native';
 import React from 'react';
 
 const render = (props: any) =>
@@ -11,12 +11,12 @@ const render = (props: any) =>
   );
 
 it('renders container', () => {
-  const { getByTestId } = render({ hasKAV: true });
+  const {getByTestId} = render({hasKAV: true});
   expect(getByTestId('safe-area')).toBeTruthy();
   expect(getByTestId('containerAvoidingView')).toBeTruthy();
 });
 
 it('removes keybordAvoiding View', () => {
-  const { queryByTestId } = render({ hasKAV: false });
+  const {queryByTestId} = render({hasKAV: false});
   expect(queryByTestId('containerAvoidingView')).toBeNull();
 });

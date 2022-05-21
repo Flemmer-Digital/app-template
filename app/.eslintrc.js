@@ -1,10 +1,16 @@
 module.exports = {
   root: true,
-  extends: ['prettier', 'eslint:recommended', 'plugin:react/recommended'],
+  extends: [
+    'prettier',
+    'eslint:recommended',
+    'plugin:react/recommended',
+    'plugin:@typescript-eslint/recommended',
+  ],
   parser: '@typescript-eslint/parser',
   plugins: ['@typescript-eslint', 'prettier'],
   rules: {
     'no-console': ['error'],
+    'no-shadow': ['error'],
     'max-len': ['error', {code: 100}],
   },
   globals: {

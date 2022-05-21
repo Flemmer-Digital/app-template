@@ -1,18 +1,19 @@
 import React from 'react';
 import styles from './TextStyles';
-import {Text, TextStyle} from 'react-native';
+import {Animated, Text, TextStyle} from 'react-native';
 
 interface TextProps {
   style?: TextStyle;
-  children?: any;
+  children?: React.ReactNode;
   variation?: 'h1' | 'h2' | 'h3' | 'mini';
   color?: string;
 }
 
 const TextView: React.FC<TextProps> = ({style, children, variation, color}) => {
+  const AnimatedText = Animated.createAnimatedComponent(Text);
   return (
     <>
-      <Text
+      <AnimatedText
         style={[
           styles.base,
           variation ? styles[variation] : null,
@@ -20,7 +21,7 @@ const TextView: React.FC<TextProps> = ({style, children, variation, color}) => {
           style,
         ]}>
         {children}
-      </Text>
+      </AnimatedText>
     </>
   );
 };

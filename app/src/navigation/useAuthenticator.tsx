@@ -4,7 +4,7 @@ import React from 'react';
 import * as Sentry from '@sentry/react-native';
 
 import {authenticate} from 'app/src/modules/authentication/authenticate';
-import { credentials } from '../modules/authentication/authorizeInApp';
+import {credentials} from '../modules/authentication/authorizeInApp';
 // import registerDevice from 'src/modules/firebase/notifications/register';
 // import sentrySetCurrentUser from 'app/src/components/utils/setCurrentUser';
 
@@ -45,7 +45,7 @@ const useAuthenticator = (): Authenticator => {
       } catch (err: any) {
         const errorString = err.toString();
 
-        // Ignore user cancellations, 
+        // Ignore user cancellations,
         // waiting on a better way to do this:
         // https://github.com/FormidableLabs/react-native-app-auth/issues/565
         if (
@@ -78,9 +78,8 @@ const useAuthenticator = (): Authenticator => {
   }, [authenticateWithState]);
 
   return {
-    authenticate: (
-      loginCredentials?: credentials
-      ) => authenticateWithState(false, loginCredentials),
+    authenticate: (loginCredentials?: credentials) =>
+      authenticateWithState(false, loginCredentials),
     authenticated: state.authenticated,
     authenticating: state.authenticating,
     error: state.error,
