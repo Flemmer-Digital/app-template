@@ -36,7 +36,7 @@ const Input: React.FC<InputProps> = ({
   placeholder,
   disabled,
   secureTextEntry,
-  keyboardType,
+  keyboardType, //defaults to normal keyboard
   multiLine,
 }) => {
   return (

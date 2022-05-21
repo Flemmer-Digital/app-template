@@ -10,6 +10,11 @@ const render = (props?: Partial<InputProps>) =>
     <Input label="email" onChangeText={onChangeText} value={''} {...props} />,
   );
 
+it('has label', () => {
+  const {getByText} = render();
+  expect(getByText('email')).toBeTruthy();
+});
+
 it('renders with icon', () => {
   const {getByText} = render({icon: <Text>Test</Text>});
   expect(getByText('Test')).toBeTruthy();
