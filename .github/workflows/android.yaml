@@ -4,8 +4,8 @@ on:
   pull_request:
     branches:
       - main
-    paths:
-      - 'app/src/**'
+    # paths:
+    #   - 'app/src/**'
 
 jobs:
   iOS-Build:
