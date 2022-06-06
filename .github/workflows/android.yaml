@@ -1,14 +1,14 @@
-name: Build Androi
+name: Build Android
 
 on:
   pull_request:
     branches:
       - master
-    # paths:
-    #   - 'app/src/**'
+    paths:
+      - 'app/src/**'
 
 jobs:
-  iOS-Build:
+  android-Build:
     name: Build Android
     runs-on: [self-hosted, windows]
     defaults:
