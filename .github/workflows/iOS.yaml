@@ -9,7 +9,7 @@ on:
 
 jobs:
   iOS-Build:
-    name: Build iO
+    name: Build iOS
     runs-on: [self-hosted, macOS]
     defaults:
       run:
