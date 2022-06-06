@@ -3,7 +3,7 @@ name: Build Androi
 on:
   pull_request:
     branches:
-      - main
+      - master
     # paths:
     #   - 'app/src/**'
 
