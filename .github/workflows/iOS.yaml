@@ -3,7 +3,7 @@ name: Run iOS
 on:
   pull_request:
     branches:
-      - main
+      - master
     paths:
       - 'app/src/**'
 

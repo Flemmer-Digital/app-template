@@ -3,7 +3,7 @@ name: Native Release Required Check
 on:
   pull_request:
     branches:
-      - main
+      - master
     paths:
       - 'app/ios/**'
       - 'app/android/**'
