@@ -38,7 +38,6 @@ const deviseIOSConfig = {
   additionalParameters: {
     prompt: 'login',
   },
-  secret: 'NPZMTyV76d0zG_2j4Ux4Vr9z94clVXEMw5jngeCchsE',
 };
 
 const deviseAndroidConfig = {
@@ -53,7 +52,6 @@ const deviseAndroidConfig = {
   additionalParameters: {
     prompt: 'login',
   },
-  secret: 'fZDPcUTf1jFcTk25QrZDMda0tuIivvleEovnw389hy4',
 };
 
 const iosAuthMethod = {

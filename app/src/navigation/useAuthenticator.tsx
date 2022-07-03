@@ -4,7 +4,6 @@ import React from 'react';
 import * as Sentry from '@sentry/react-native';
 
 import {authenticate} from 'app/src/modules/authentication/authenticate';
-import {credentials} from '../modules/authentication/authorizeInApp';
 // import registerDevice from 'src/modules/firebase/notifications/register';
 // import sentrySetCurrentUser from 'app/src/components/utils/setCurrentUser';
 
@@ -13,7 +12,7 @@ export interface Authenticator {
   authenticating: boolean;
   error: string | null;
   // eslint-disable-next-line
-  authenticate: (loginCredentials?: credentials) => Promise<void>;
+  authenticate: () => Promise<void>;
 }
 
 const defaultState = {
@@ -27,11 +26,11 @@ const useAuthenticator = (): Authenticator => {
   // const apolloClient = useApolloClient();
 
   const authenticateWithState = React.useCallback(
-    async (storedTokenOnly: boolean, loginCredentials?: credentials) => {
+    async (storedTokenOnly: boolean) => {
       setState(prevState => ({...prevState, authenticating: true}));
 
       try {
-        const result = await authenticate({storedTokenOnly, loginCredentials});
+        const result = await authenticate({storedTokenOnly});
         setState(prevState => ({
           ...prevState,
           authenticating: false,
@@ -78,8 +77,7 @@ const useAuthenticator = (): Authenticator => {
   }, [authenticateWithState]);
 
   return {
-    authenticate: (loginCredentials?: credentials) =>
-      authenticateWithState(false, loginCredentials),
+    authenticate: () => authenticateWithState(false),
     authenticated: state.authenticated,
     authenticating: state.authenticating,
     error: state.error,

@@ -20,17 +20,6 @@ const SignInView = ({
           <Text style={style.text}>Sign In/Register Via Web</Text>
         </View>
       </Pressable>
-      <Pressable
-        onPress={() =>
-          authenticate({
-            username: 'flemmerwill@gmail.com',
-            password: 'password',
-          })
-        }>
-        <View>
-          <Text style={style.text}>In App Login</Text>
-        </View>
-      </Pressable>
     </Flex>
   );
 };

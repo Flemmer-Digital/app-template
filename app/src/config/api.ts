@@ -2,14 +2,14 @@ export interface ApiConfiguration {
   production: {
     url: string;
   };
-  authenticationLocation: 'app' | 'web';
+  authenticationLocation: 'web';
 }
 
 const apiConfiguration: ApiConfiguration = {
   production: {
     url: 'https://something',
   },
-  authenticationLocation: 'app',
+  authenticationLocation: 'web',
 };
 
 export default apiConfiguration;

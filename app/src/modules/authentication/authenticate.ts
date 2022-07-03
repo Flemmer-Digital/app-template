@@ -11,7 +11,6 @@ import NativeOauthToken from './nativeOauthToken';
 import nativeOauthConfig, {AuthConfiguration} from './nativeOauthConfig';
 import {signOut} from './signOut';
 import apiConfiguration from 'app/src/config/api';
-import {authenticateInApp, credentials} from './authorizeInApp';
 
 let refreshing = false;
 const tokenLock = new RWLock();
@@ -23,16 +22,11 @@ export type RequestAccessTokenResult = {
   refreshToken: string;
 };
 
-const requestAccessToken = async (
-  config: AuthConfiguration,
-  loginCredentials?: credentials,
-) => {
+const requestAccessToken = async (config: AuthConfiguration) => {
   let result: RequestAccessTokenResult;
   const authType = apiConfiguration.authenticationLocation;
   if (authType === 'web')
     result = await authorize(config as RNAppAuthConfiguration);
-  else if (authType === 'app' && loginCredentials)
-    result = await authenticateInApp(config, loginCredentials); //change this
   else throw 'Invalid Authentication Config';
 
   const token = new NativeOauthToken(result.accessToken, result.refreshToken);
@@ -101,22 +95,17 @@ export const withAccessToken = async <T>(
 
 interface AuthenticateArgs {
   storedTokenOnly: boolean;
-  loginCredentials?: credentials;
 }
 
 export const authenticate = async ({
   storedTokenOnly,
-  loginCredentials,
 }: AuthenticateArgs): Promise<boolean> => {
   const hasToken = await hasAccessToken();
 
   if (hasToken) return true;
   if (storedTokenOnly) return false;
 
-  await requestAccessToken(
-    nativeOauthConfig(),
-    loginCredentials && loginCredentials,
-  );
+  await requestAccessToken(nativeOauthConfig());
 
   return true;
 };
