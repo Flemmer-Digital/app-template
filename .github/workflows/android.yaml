@@ -3,12 +3,12 @@ name: Build Android
 on:
   pull_request:
     branches:
-      - main
+      - master
     paths:
       - 'app/src/**'
 
 jobs:
-  iOS-Build:
+  android-Build:
     name: Build Android
     runs-on: [self-hosted, windows]
     defaults:
