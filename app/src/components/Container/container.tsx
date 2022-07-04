@@ -5,7 +5,7 @@ import { useHeaderHeight } from '@react-navigation/elements';
 import { Keyboard } from 'react-native';
 import { TouchableWithoutFeedback } from 'react-native';
 
-interface ContainerProps {
+export interface ContainerProps {
   backgroundColor?: string;
   children?: React.ReactNode;
   hasKeyboardAvoidingView?: boolean;
