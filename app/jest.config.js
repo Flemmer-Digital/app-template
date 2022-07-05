@@ -19,7 +19,7 @@ module.exports = {
   setupFiles: ['./node_modules/react-native-gesture-handler/jestSetup.js'],
   // snapshotSerializers: ['enzyme-to-json/serializer', 'jest-serializer-gql'],
   testRegex: '/(\\w+)\\.test\\.tsx?$',
-  testMatch: null,
+  testMatch: ['**/src/components/**/*.test.tsx'],
   moduleDirectories: ['<rootDir>/node_modules', '<rootDir>../node_modules', '.'],
   moduleFileExtensions: ['ts', 'tsx', 'native.ts', 'native.tsx', 'js', 'native.js', 'json', 'd.ts'],
   resetMocks: true,
