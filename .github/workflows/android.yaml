@@ -6,6 +6,7 @@ on:
       - master
     paths:
       - 'app/src/**'
+  push
 
 jobs:
   android-Build:
@@ -24,8 +25,10 @@ jobs:
       - uses: actions/setup-node@master
         
       - name: Install node modules
-        run: |
-          yarn install
+        run: yarn install
+
+      - name: Run tests
+        run: yarn test
 
       - name: Clean and Build For Android
         run: |
