@@ -25,10 +25,7 @@ const Container: React.FC<ContainerProps> = ({
 
   return (
     <>
-      <SafeAreaView
-        style={[styles.safeArea, { backgroundColor: backgroundColor }]}
-        testID="safe-area"
-      >
+      <SafeAreaView style={[styles.safeArea, { backgroundColor: backgroundColor }]}>
         <TouchableWithoutFeedback onPress={Keyboard.dismiss} accessible={false}>
           <>
             {hasKeyboardAvoidingView ? (
