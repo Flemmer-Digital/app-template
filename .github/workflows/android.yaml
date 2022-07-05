@@ -27,9 +27,6 @@ jobs:
       - name: Install node modules
         run: yarn install
 
-      - name: Run tests
-        run: yarn test
-
       - name: Clean and Build For Android
         run: |
           cd android
