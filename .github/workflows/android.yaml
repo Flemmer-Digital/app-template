@@ -1,11 +1,11 @@
 name: Build Android
 
 on:
-  pull_request:
-    branches:
-      - master
-    paths:
-      - 'app/src/**'
+  # pull_request:
+  #   branches:
+  #     - master
+  #   paths:
+  #     - 'app/src/**'
   push
 
 jobs:
