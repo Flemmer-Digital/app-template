@@ -1,22 +1,30 @@
-import Container from './container';
-import {render as testRender} from '@testing-library/react-native';
-import {Text} from 'react-native';
+import Container, { ContainerProps } from './container';
+import { render as testRender, fireEvent } from '@testing-library/react-native';
 import React from 'react';
+import Primary from '../Button/primary/index';
 
-const render = (props: any) =>
+const onPress = jest.fn();
+
+const render = (props?: Partial<ContainerProps>) =>
   testRender(
-    <Container hasKeyboardAvoidingView={props.hasKAV}>
-      <Text>Test</Text>
+    <Container {...props}>
+      <Primary onPress={onPress} text="Button" />
     </Container>,
   );
 
 it('renders container', () => {
-  const {getByTestId} = render({hasKAV: true});
-  expect(getByTestId('safe-area')).toBeTruthy();
+  const { getByTestId, getByText } = render({ hasKeyboardAvoidingView: true });
+  expect(getByText('Button')).toBeTruthy();
   expect(getByTestId('containerAvoidingView')).toBeTruthy();
 });
 
 it('removes keybordAvoiding View', () => {
-  const {queryByTestId} = render({hasKAV: false});
-  expect(queryByTestId('containerAvoidingView')).toBeNull();
+  const { queryByTestId } = render();
+  expect(queryByTestId('containerAvoidingView')).toBeFalsy();
+});
+
+it('does not block buttons', () => {
+  const { getByText } = render({ hasKeyboardAvoidingView: true });
+  fireEvent.press(getByText('Button'));
+  expect(onPress).toHaveBeenCalled();
 });

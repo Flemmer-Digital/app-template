@@ -1,11 +1,11 @@
 import React from 'react';
 import styles from './containerStyles';
-import {KeyboardAvoidingView, SafeAreaView} from 'react-native';
-import {useHeaderHeight} from '@react-navigation/elements';
-import {Keyboard} from 'react-native';
-import {TouchableWithoutFeedback} from 'react-native-gesture-handler';
+import { KeyboardAvoidingView, SafeAreaView } from 'react-native';
+import { useHeaderHeight } from '@react-navigation/elements';
+import { Keyboard } from 'react-native';
+import { TouchableWithoutFeedback } from 'react-native';
 
-interface ContainerProps {
+export interface ContainerProps {
   backgroundColor?: string;
   children?: React.ReactNode;
   hasKeyboardAvoidingView?: boolean;
@@ -22,18 +22,18 @@ const Container: React.FC<ContainerProps> = ({
   } catch (e) {
     headerHeight = 10;
   }
+
   return (
     <>
-      <SafeAreaView
-        style={[styles.safeArea, {backgroundColor: backgroundColor}]}
-        testID="safe-area">
+      <SafeAreaView style={[styles.safeArea, { backgroundColor: backgroundColor }]}>
         <TouchableWithoutFeedback onPress={Keyboard.dismiss} accessible={false}>
           <>
             {hasKeyboardAvoidingView ? (
               <KeyboardAvoidingView
                 behavior="padding"
                 testID="containerAvoidingView"
-                keyboardVerticalOffset={headerHeight}>
+                keyboardVerticalOffset={headerHeight}
+              >
                 <>{children}</>
               </KeyboardAvoidingView>
             ) : (
