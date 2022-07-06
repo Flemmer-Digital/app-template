@@ -1,7 +1,7 @@
 import React from 'react';
 import styles from './primaryStyles';
-import Button from '../baseButton';
-import {ViewStyle} from 'react-native';
+import Button from '../BaseButton';
+import { ViewStyle } from 'react-native';
 
 export interface PrimaryProps {
   text: string;
@@ -10,12 +10,12 @@ export interface PrimaryProps {
   disabled?: boolean;
 }
 
-const Primary: React.FC<PrimaryProps> = ({text, onPress, style, disabled}) => {
+const Primary: React.FC<PrimaryProps> = ({ text, onPress, style, disabled }) => {
   return (
     <Button
       text={text}
       onPress={onPress}
-      style={{...styles.primary, ...style}}
+      style={{ ...styles.primary, ...style }}
       textStyle={styles.textStyle}
       disabled={disabled}
     />

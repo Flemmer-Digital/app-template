@@ -1,7 +1,7 @@
 import React from 'react';
 import styles from './secondaryStyles';
-import Button from '../baseButton';
-import {ViewStyle} from 'react-native';
+import Button from '../BaseButton';
+import { ViewStyle } from 'react-native';
 
 export interface SecondaryProps {
   text: string;
@@ -10,17 +10,12 @@ export interface SecondaryProps {
   disabled?: boolean;
 }
 
-const Secondary: React.FC<SecondaryProps> = ({
-  text,
-  onPress,
-  style,
-  disabled,
-}) => {
+const Secondary: React.FC<SecondaryProps> = ({ text, onPress, style, disabled }) => {
   return (
     <Button
       text={text}
       onPress={onPress}
-      style={{...styles.secondary, ...style}}
+      style={{ ...styles.secondary, ...style }}
       textStyle={styles.textStyle}
       disabled={disabled}
     />
