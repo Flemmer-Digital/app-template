@@ -11,7 +11,7 @@
     "lint": "eslint . --ext .js,.jsx,.ts,.tsx",
     "typecheck": "yarn run tsc --noEmit",
     "createComp": "python3 scripts/createComponent.py",
-    "test:changed": "yarn test --changedSince origin/main",
+    "test:changed": "yarn test --changedSince origin/master",
     "preCommit": "yarn typecheck && yarn test:changed"
   },
   "dependencies": {
