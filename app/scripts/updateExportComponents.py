@@ -6,7 +6,7 @@ ignore = ['utils']
 
 # Create list of components excluding multiComponents
 components = []
-for folder in os.scandir('./src/components'):
+for folder in os.scandir('../src/components'):
   if folder.is_dir() and folder.name not in ignore and folder.name not in multiComponents:
     components.append(folder.name)
     
@@ -15,17 +15,18 @@ for folder in os.scandir('./src/components'):
 # Get all components from multiComponents
 for key in multiComponents.keys():
   sub_components = []
-  for folder in os.scandir('./src/components/' + key):
+  for folder in os.scandir('../src/components/' + key):
     if folder.is_dir():
       sub_components.append(folder.name)
       
   multiComponents[key] = sub_components
 
 
-import_string = 'import {0} from \'./src/components/{0}\';\n'
-multi_import_string = 'import {0} from \'./src/components/{1}/{0}\';\n'
+import_string = 'import {0} from \'./{0}\';\n'
+export_string = 'export {{ {0} }};\n'
+multi_import_string = 'import {0} from \'./{1}/{0}\';\n'
 
-f = open('./exportComponents.ts', 'w')
+f = open('../src/components/exportComponents.ts', 'w')
 
 print('\nMulti Components:')
 for master_component in multiComponents:
@@ -37,6 +38,13 @@ print('\nSingle Components:')
 for component in components:
   f.write(import_string.format(component))
   print('- ' + component)
+  
+for component in components:
+  f.write(export_string.format(component))
+  
+for master_component in multiComponents:
+  for sub_component in multiComponents[master_component]:
+    f.write(export_string.format(sub_component))
   
 print('\nDone!')
 f.close()
