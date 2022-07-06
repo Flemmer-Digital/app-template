@@ -5,7 +5,7 @@ import PressableOpacity from '../../PressableOpacity';
 import Text from '../../Text';
 import { ViewStyle, TextStyle } from 'react-native';
 
-export interface ButtonProps {
+export interface BaseButtonProps {
   style?: ViewStyle;
   onPress: () => void;
   text: React.ReactNode | string;
@@ -13,7 +13,7 @@ export interface ButtonProps {
   disabled?: boolean;
 }
 
-const Button: React.FC<ButtonProps> = ({ style, onPress, text, disabled, textStyle }) => {
+const Button: React.FC<BaseButtonProps> = ({ style, onPress, text, disabled, textStyle }) => {
   return (
     <PressableOpacity onPress={onPress} style={[styles.container, style]} disabled={disabled}>
       <Flex
