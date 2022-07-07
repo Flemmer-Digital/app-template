@@ -1,3 +1,2 @@
-import BaseButton, { BaseButtonProps } from './baseButton';
+import BaseButton from './baseButton';
 export default BaseButton;
-export type { BaseButtonProps };

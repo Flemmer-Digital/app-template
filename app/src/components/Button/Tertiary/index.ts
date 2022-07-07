@@ -1,3 +1,2 @@
-import Tertiary, { TertiaryProps } from './tertiary';
+import Tertiary from './tertiary';
 export default Tertiary;
-export type { TertiaryProps };

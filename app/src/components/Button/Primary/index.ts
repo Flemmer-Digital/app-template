@@ -1,3 +1,2 @@
-import Primary, { PrimaryProps } from './primary';
+import Primary from './primary';
 export default Primary;
-export type { PrimaryProps };

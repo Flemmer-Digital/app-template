@@ -1,3 +1,2 @@
-import Secondary, { SecondaryProps } from './secondary';
+import Secondary from './secondary';
 export default Secondary;
-export type { SecondaryProps };
