@@ -3,7 +3,7 @@ import os
 # Components with multiple components inside (e.g buttons)
 multiComponents = {'Button':[]}
 
-# Ignored since they are not standard components
+# Ignored since they are not standard component
 ignore = ['utils']
 
 # Create list of components excluding multiComponents
