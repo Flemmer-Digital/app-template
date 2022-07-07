@@ -2,6 +2,7 @@
   "name": "app",
   "version": "0.0.1",
   "private": true,
+  "main": "exportComponents.ts",
   "scripts": {
     "android": "react-native run-android",
     "ios": "react-native run-ios",
@@ -12,7 +13,8 @@
     "typecheck": "yarn run tsc --noEmit",
     "createComp": "python3 scripts/createComponent.py",
     "test:changed": "yarn test --changedSince origin/master",
-    "preCommit": "yarn typecheck && yarn test:changed"
+    "preCommit": "yarn typecheck && yarn test:changed",
+    "updateComponents": "python3 scripts/updateExportComponents.py"
   },
   "dependencies": {
     "@apollo/client": "^3.4.16",
