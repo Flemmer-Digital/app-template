@@ -7,6 +7,8 @@ on:
     paths:
       - 'app/src/**'
 
+permissions: read-all
+
 jobs:
   android-Build:
     name: Build Android
