@@ -10,6 +10,10 @@ on:
 jobs:
   android-Build:
     name: Build Android
+    env:
+      GITHUB_TOKEN: ${{ secrets.GH_TOKEN }}
+      NPM_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      NODE_AUTH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
     runs-on: [self-hosted, windows]
     defaults:
       run:
