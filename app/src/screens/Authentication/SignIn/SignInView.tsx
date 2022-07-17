@@ -2,7 +2,7 @@ import React from 'react';
 import {View, Text, Pressable} from 'react-native';
 import style from './SignInViewStyles';
 import {Authenticator} from 'app/src/navigation/useAuthenticator';
-import Flex from 'app/src/components/Flex';
+import {Flex} from '@flemmer-digital/mobile-app-components';
 
 const SignInView = ({
   authenticate,
