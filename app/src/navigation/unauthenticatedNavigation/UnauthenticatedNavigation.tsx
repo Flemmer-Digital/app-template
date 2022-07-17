@@ -3,9 +3,7 @@ import {createStackNavigator} from '@react-navigation/stack';
 import React from 'react';
 
 import {Authenticator} from '../useAuthenticator';
-import Container from '../../components/Container/index';
-import Flex from '../../components/Flex/index';
-import Input from '../../components/Input/index';
+import {Flex, Container, Input} from '@flemmer-digital/mobile-app-components';
 
 const Stack = createStackNavigator();
 
