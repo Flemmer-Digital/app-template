@@ -17,6 +17,10 @@ run
 then run:
 `yarn install:pods`
 
+### Setup: Authenticating to use Github npm modules
+1. `npm login --scope=Flemmer-Digital --registry=https://npm.pkg.github.com`
+2. Ask Will for github credentials
+
 ### Setup: Linking to the Rails api
 Once the rails app is hosted somehwere, change the url in buildApiUrl.ts to the hosting url.
 
