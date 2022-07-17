@@ -24,8 +24,7 @@ jobs:
       - uses: actions/setup-node@master
         
       - name: Install node modules
-        run: |
-          yarn install
+        run: yarn install
 
       - name: Clean and Build For Android
         run: |
