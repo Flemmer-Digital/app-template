@@ -4,8 +4,6 @@ on:
   pull_request:
     branches:
       - master
-    paths:
-      - 'app/src/**'
 
 permissions: read-all
 
