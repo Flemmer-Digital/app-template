@@ -4,6 +4,7 @@ import React from 'react';
 
 import {Authenticator} from '../useAuthenticator';
 import {Flex, Container, Input} from '@flemmer-digital/mobile-app-components';
+import SignIn from 'app/src/screens/Authentication/SignIn';
 
 const Stack = createStackNavigator();
 
@@ -21,34 +22,7 @@ const UnauthenticatedNavigation = ({
     <NavigationContainer>
       <Stack.Navigator>
         <Stack.Screen name="SignIn">
-          {() => (
-            <Container backgroundColor="#fff" hasKeyboardAvoidingView>
-              <Flex
-                direction="column"
-                justifyContent="center"
-                alignItems="center">
-                <Input
-                  label="Email"
-                  onChangeText={setEmail}
-                  value={email}
-                  placeholder="Enter your email"
-                />
-                <Input
-                  label="Password"
-                  onChangeText={setPassword}
-                  value={password}
-                  placeholder="Enter your password"
-                  secureTextEntry
-                />
-                <Input
-                  label="Description"
-                  onChangeText={setDescription}
-                  value={description}
-                  placeholder="Enter your description"
-                />
-              </Flex>
-            </Container>
-          )}
+          {() => <SignIn authenticator={authenticator} />}
         </Stack.Screen>
       </Stack.Navigator>
     </NavigationContainer>
