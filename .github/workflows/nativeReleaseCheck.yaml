@@ -11,7 +11,7 @@ on:
 jobs:
   iOS-Build:
     name: Check for native changes
-    runs-on: [self-hosted, windows]
+    runs-on: [self-hosted, linux]
     defaults:
       run:
         working-directory: .
