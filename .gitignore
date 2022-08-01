@@ -3,5 +3,6 @@
 app/test-report/native/cobertura-coverage.xml
 app/.eslintcache
 app/junit.xml
+app/android/key.json
 
 .DS_Store
