@@ -6,3 +6,4 @@ app/junit.xml
 app/android/key.json
 
 .DS_Store
+app/android/app/keystore
