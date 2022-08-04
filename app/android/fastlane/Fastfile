@@ -60,7 +60,8 @@ platform :android do
       }
     )
     upload_to_play_store(
-      track: 'internal'
+      track: 'internal',
+      release_status: 'draft'
     )
   end
 end

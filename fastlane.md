@@ -39,3 +39,12 @@ Use fastlane beta to build and distribute to app store
 ### APK specifies a version code that has already been used (Android)
 
 1. Increment Android build number using the [this](https://medium.com/@atul.dc/increment-build-number-using-fastlane-c12b4b886ea3)
+
+### Only releases with status draft may be created on draft app
+
+```
+upload_to_play_store(
+  ...
+  release_status: 'draft'
+)
+```
