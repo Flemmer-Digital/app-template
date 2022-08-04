@@ -21,24 +21,33 @@ platform :android do
     gradle(task: "test")
   end
 
+  desc "Increment Build Number"
+  lane :IncrementBuildNumber do
+
+    path = '../app/build.gradle'
+    re = /versionCode\s+(\d+)/
+    s = File.read(path)
+    versionCode = s[re, 1].to_i
+    s[re, 1] = (versionCode + 1).to_s
+    f = File.new(path, 'w')
+    f.write(s)
+    f.close
+
+  end
+
+  desc "Push To Git"
+  lane :gitpush do
+    git_add
+    git_commit(path: "*", message: "Version")
+    push_to_git_remote
+  end
+
   desc "Submit a new Beta Build to Play Store"
   lane :beta do
     store_password = prompt(text: "Signing Store Password: ", secure_text: true)
     key_password = prompt(text: "Alias Key Password: ", secure_text: true)
     releaseFilePath = File.join(Dir.pwd, "..", "app/keystore")
     gradle(task: 'clean')
-    previous_build_number = google_play_track_version_codes(
-      package_name: app_id,
-      track: "internal",
-      json_key: json_key_file_path,
-    )[0]
-    
-    current_build_number = previous_build_number + 1
-    
-    increment_version_code(
-      gradle_file_path: gradle_file_path,
-      version_code: current_build_number
-    )
     gradle(
       task: 'bundle',
       build_type: 'Release',
