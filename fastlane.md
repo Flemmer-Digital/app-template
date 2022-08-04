@@ -1,4 +1,4 @@
-### Fastlane Documen
+### Fastlane Documentation
 
 ## iOS
 
@@ -11,8 +11,6 @@
 
 Use Match
 
-### Debugging
-
 ## Android
 
 ### Install
@@ -24,6 +22,6 @@ Use Match
 Creating Key.json
 [Key not found](#key-not-found)
 
-### Debugging
+## Debugging
 
-#### Key Not Found
+### Key not found
