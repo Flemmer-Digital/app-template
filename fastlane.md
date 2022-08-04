@@ -19,9 +19,11 @@ Use Match
 
 ### Signing
 
-Creating Key.json
-[Key not found](#key-not-found)
+1. [Create Key.json](https://docs.fastlane.tools/getting-started/android/setup/#collect-your-google-credentials) and store in android
 
 ## Debugging
 
-### Key not found
+### Package Not Found (Android)
+
+1. Make sure to upload at least 1 build of the app to google play
+2. Change package name in AppFile to match the one displayed in Google Play Console
