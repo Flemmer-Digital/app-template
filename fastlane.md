@@ -64,18 +64,17 @@ Use fastlane beta to build and distribute to app store
 
 ### Only releases with status draft may be created on draft app
 
-```
-
+```ruby
 upload_to_play_store(
-...
-release_status: 'draft'
+  ...
+  release_status: 'draft'
 )
 
 ```
 
 ### iOS Match Issues
 
-Usually running `fastlane match nuke distribution/development`{:.ruby} followed by fastlane match appstore
+Usually running `fastlane match nuke distribution/development` followed by fastlane match appstore
 will fix the issue
 
 ```
