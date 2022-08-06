@@ -1,8 +1,0 @@
-app_identifier("com.flemmerdigital.app-template") # The bundle identifier of your app
-apple_id("oliver.flemmer@icloud.com") # Your Apple email address
-
-itc_team_id("122894455") # App Store Connect Team ID
-team_id("25JBA65ZNT") # Developer Portal Team ID
-
-# For more information about the Appfile, see:
-#     https://docs.fastlane.tools/advanced/#appfile
