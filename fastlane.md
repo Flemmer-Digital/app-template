@@ -5,11 +5,7 @@
 1. Create app icon and add to app
 2. Change App package name in xcode (e.g com.flemmerdigital.apptemplate)
 
-### Install
-
-[Guide](https://thecodingmachine.github.io/react-native-boilerplate/docs/BetaBuild/#setting-up)
-
-1. Fastlane init
+### [Installation](https://thecodingmachine.github.io/react-native-boilerplate/docs/BetaBuild/#setting-up)
 
 ### Signing
 
@@ -21,7 +17,7 @@
 6. Change Xcode signing to be match Appstore
 7. add match(type: "appstore") to beta lane
 
-result:
+Result
 
 ```ruby
 desc "Push a new beta build to TestFlight"
@@ -39,13 +35,12 @@ Use fastlane beta to build and distribute to app store
 
 ## Android
 
-### Install
-
-1. Fastlane init
+### [Installaltion](https://thecodingmachine.github.io/react-native-boilerplate/docs/BetaBuild/#setting-up-1)
 
 ### Signing
 
 1. [Create Key.json](https://docs.fastlane.tools/getting-started/android/setup/#collect-your-google-credentials) and store in android
+2. Use Android Studio to upload first build
 
 ### Running
 
@@ -76,7 +71,3 @@ upload_to_play_store(
 
 Usually running `fastlane match nuke distribution/development` followed by fastlane match appstore
 will fix the issue
-
-```
-
-```
