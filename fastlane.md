@@ -48,3 +48,9 @@ upload_to_play_store(
   release_status: 'draft'
 )
 ```
+
+### Cannot run program "node" (Android)
+
+1. Close android studio
+2. run `open -a /Applications/Android\ Studio.app`
+3. reopen android studio
