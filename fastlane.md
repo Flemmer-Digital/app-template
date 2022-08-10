@@ -54,3 +54,7 @@ upload_to_play_store(
 1. Close android studio
 2. run `open -a /Applications/Android\ Studio.app`
 3. reopen android studio
+
+### requires JDK11 or higher (Android)
+
+1. Android Studio -> Preferences -> Build, Execution & Development -> Gradle -> Dropdown -> 16 version -> **Apply** -> File -> Gradle Sync
