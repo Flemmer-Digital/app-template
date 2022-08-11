@@ -10,4 +10,4 @@ permissions: read-all
 
 jobs:
   android-Build:
-  uses: Flemmer-Digital/app-template/.github/workflows
+  uses: Flemmer-Digital/app-template/.github/workflows/android.yaml
