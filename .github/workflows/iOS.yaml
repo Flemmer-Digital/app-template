@@ -1,0 +1,50 @@
+name: Run iOS
+
+on:
+  pull_request:
+    branches:
+      - master
+
+permissions: read-all
+
+jobs:
+  iOS-Build:
+    name: Build iOS
+    env:
+      GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      NPM_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      NODE_AUTH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+    runs-on: [self-hosted, macOS]
+    defaults:
+      run:
+        working-directory: ./app
+    steps:
+      - name: Cancel Incomplete Runs
+        uses: styfle/cancel-workflow-action@0.9.1
+
+      - name: Checkout
+        uses: actions/checkout@v2
+
+      - uses: actions/setup-node@master
+
+      - name: Install node modules
+        run: |
+          yarn install
+
+      - name: Install pods
+        run: |
+          cd ios
+          bundle install
+          cd ..
+          yarn install:pods
+
+      - name: Build For iOS
+        run: |
+          yarn ios
+
+      - name: Clean Up
+        if: always()
+        run: |
+          echo "Cleaning up"
+          xcrun simctl shutdown all && xcrun simctl erase all
+          kill $(lsof -t -i:8081)
