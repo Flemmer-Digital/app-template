@@ -42,6 +42,13 @@ jobs:
         run: |
           yarn ios
 
+      # Only run detox ios build if /ios folder has changed
+      - name: Build Detox
+        run: git diff --quiet HEAD master -- ios || yarn build:integration:ios
+
+      - name: Run Integration Tests
+        run: yarn test:integration:ios
+
       - name: Clean Up
         if: always()
         run: |
