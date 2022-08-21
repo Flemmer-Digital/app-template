@@ -42,6 +42,9 @@ jobs:
         run: |
           yarn ios
 
+      - name: Build Detox
+        run: yarn build:integration:ios
+
       - name: Run Integration Tests
         run: yarn test:integration:ios
 

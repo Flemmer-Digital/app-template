@@ -1,9 +1,5 @@
 #!/bin/bash
 
-yarn detox clean-framework-cache
-yarn detox build-framework-cache
-yarn detox build
-
 set -euo pipefail
 
 # Ensure that the right simulator exists before running detox
@@ -17,4 +13,4 @@ rm -rf artifacts/*
 
 export SIMCTL_CHILD_NSZombieEnabled=1
 
-detox test --retries 3 "$@"
+detox test --retries 2 "$@"

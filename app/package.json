@@ -12,7 +12,8 @@
     "typecheck": "yarn run tsc --noEmit",
     "createComp": "python3 scripts/createComponent.py",
     "test:changed": "yarn test --changedSince origin/master",
-    "test:integration:ios": "./scripts/detoxWrapper.sh",
+    "test:integration:ios": "./scripts/detoxTest.sh",
+    "build:integration:ios": "./scripts/detoxBuild.sh",
     "preCommit": "yarn typecheck && yarn test:changed"
   },
   "dependencies": {
