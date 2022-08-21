@@ -42,6 +42,9 @@ jobs:
         run: |
           yarn ios
 
+      - name: Run Integration Tests
+        run: yarn test:integration:ios
+
       - name: Clean Up
         if: always()
         run: |
