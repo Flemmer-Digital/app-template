@@ -3,6 +3,8 @@
 ## iOS
 
 1. Create app icon and add to app
+   1. Get App Icon Image and upload to [this website](https://resizeappicon.com/) to resize it
+   2. Upload the output of the website using [this stackoverflow](https://stackoverflow.com/questions/28170520/ios-how-to-set-app-icon-and-launch-images) as guide
 2. Change App package name in xcode (e.g com.flemmerdigital.apptemplate)
 
 ### [Installation](https://thecodingmachine.github.io/react-native-boilerplate/docs/BetaBuild/#setting-up)
