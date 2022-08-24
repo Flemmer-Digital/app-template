@@ -42,14 +42,19 @@ This will build and distribute the app to the app store
 
 ### Signing
 
-1. [Create Key.json](https://docs.fastlane.tools/getting-started/android/setup/#collect-your-google-credentials) and store in android
-2. Use Android Studio to upload first build
+1. [Create Key.json](https://docs.fastlane.tools/getting-started/android/setup/#collect-your-google-credentials) and store in android folder
+2. Use Android Studio to upload first build - [Building For Release](https://developer.android.com/studio/run/build-for-release)
 
 ### Running
 
 Use `fastlane beta` to build and distribute to app store
 
 ## Debugging
+
+### android Studio Issues on First open
+
+1. Close Android Studio
+2. Run `open -a /Applications/Android\ Studio.app`
 
 ### Package Not Found (Android)
 
