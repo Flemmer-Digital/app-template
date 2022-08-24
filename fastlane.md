@@ -33,7 +33,8 @@ end
 
 ### Running
 
-Use fastlane beta to build and distribute to app store
+Run `fastlane beta`
+This will build and distribute the app to the app store
 
 ## Android
 
