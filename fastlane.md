@@ -15,9 +15,9 @@
 2. Disable Automatic Signing
 3. Run `fastlane match init`
 4. Provide url of key repo (https://github.com/Oli-Flemmer/ideal-dollop)
-5. Enter passphrase
-6. Change Xcode signing to be match Appstore
-7. add match(type: "appstore") to beta lane
+5. Change Xcode signing to be match Appstore
+   1. App -> Signing & Capabilities -> Change Provisioning Profile to be match Appstore
+6. add match(type: "appstore") to beta lane
 
 Result
 
