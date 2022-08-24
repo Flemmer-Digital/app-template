@@ -17,7 +17,7 @@
 4. Provide url of key repo (https://github.com/Oli-Flemmer/ideal-dollop)
 5. Change Xcode signing to be match Appstore
    1. App -> Signing & Capabilities -> Change Provisioning Profile to be match Appstore
-6. add match(type: "appstore") to beta lane
+6. add match(type: "appstore") to beta lane in Fastfile. Below is what the fastfile should look like.
 
 Result
 
