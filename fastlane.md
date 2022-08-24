@@ -47,7 +47,7 @@ This will build and distribute the app to the app store
 
 ### Running
 
-Use fastlane beta to build and distribute to app store
+Use `fastlane beta` to build and distribute to app store
 
 ## Debugging
 
