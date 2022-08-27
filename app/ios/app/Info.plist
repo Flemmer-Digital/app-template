@@ -78,7 +78,8 @@
 			<key>CFBundleURLSchemes</key>
 			<array>
 				<string>com.googleusercontent.apps.434565811503-q8014aondqou38fk9nfq4a6q4r1vsur0</string>
-				<string>iosapp</string>
+				<string>http</string>
+				<!-- <string>iosapp</string> -->
 			</array>
 		</dict>
 	</array>

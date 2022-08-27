@@ -26,19 +26,19 @@ const googleIOSConfig = {
     'com.googleusercontent.apps.434565811503-q8014aondqou38fk9nfq4a6q4r1vsur0:/oauth2redirect/google',
   scopes: ['openid', 'profile'],
 };
-
+// iosapp://oauth-redirect
 const deviseIOSConfig = {
-  clientId: 'dbb86dc2-aa17-45b1-bc49-63fdb2acbf22',
-  redirectUrl: 'iosapp://oauth-redirect',
-  scopes: [],
+  clientId: 'id',
+  redirectUrl: 'http://localhost:8000',
+  scopes: ['read', 'write'],
   serviceConfiguration: {
-    authorizationEndpoint: buildApiUrl('/oauth/authorize'),
-    tokenEndpoint: buildApiUrl('/oauth/token'),
+    authorizationEndpoint: buildApiUrl('/o/authorize'),
+    tokenEndpoint: buildApiUrl('/o/token'),
   },
-  additionalParameters: {
-    prompt: 'login',
-  },
-  secret: 'NPZMTyV76d0zG_2j4Ux4Vr9z94clVXEMw5jngeCchsE',
+  // additionalParameters: {
+  //   prompt: 'login',
+  // },
+  secret: 'secret',
 };
 
 const deviseAndroidConfig = {
